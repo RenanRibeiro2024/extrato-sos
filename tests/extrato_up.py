@@ -36,7 +36,7 @@ if uploaded_files:
         with open(caminho_final, "wb") as f:
             f.write(uploaded_file.getbuffer())
 
-        st.success(f"Arquivo salvo: {caminho_final}")
-        
+        st.success(f"Arquivo salvo! {nome_arquivo}")
+time.sleep(15)
 st.success("Arquivos processados com sucesso. Encerrando...")
 st.stop()
