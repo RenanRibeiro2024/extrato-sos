@@ -1,0 +1,5 @@
+site_name: Extrato-sos
+theme: readthedocs
+nav:
+  - Extrato-sos: index.md
+  - Git: git.md
