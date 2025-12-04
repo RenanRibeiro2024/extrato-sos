@@ -16,11 +16,9 @@ PASTA_ARQUIVOS = os.path.join(BASE_DIR, "..", "src", "extrato_sos", "arquivos")
 
 os.makedirs(PASTA_ARQUIVOS, exist_ok=True)
 
-# Cria a pasta se não existir
-#os.makedirs(PASTA_ARQUIVOS, exist_ok=True)
 
 uploaded_files = st.file_uploader(
-    "📎 Carregue uma ou mais faturas (CSV ou Excel)",
+    "📎 Carregue um ou mais extratos (CSV ou Excel)",
     type=["csv", "xls", "xlsx"],
     accept_multiple_files=True
 )
