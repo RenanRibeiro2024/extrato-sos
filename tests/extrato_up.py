@@ -15,7 +15,3 @@ if uploaded_files:
     for uploaded_file in uploaded_files:
         nome_arquivo = uploaded_file.name
         print(nome_arquivo)
-
-        with st.expander(f"📄 {nome_arquivo}", expanded=True):
-            layout = st.selectbox("Layout da fatura", ["Nubank", "Banco Inter"], key=f"layout_{nome_arquivo}")
-
