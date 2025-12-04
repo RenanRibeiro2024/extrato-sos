@@ -39,3 +39,6 @@ if uploaded_files:
             f.write(uploaded_file.getbuffer())
 
         st.success(f"Arquivo salvo: {caminho_final}")
+        
+st.success("Arquivos processados com sucesso. Encerrando...")
+st.stop()
