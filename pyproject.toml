@@ -10,7 +10,8 @@ requires-python = ">=3.13"
 dependencies = [
     "pandas (>=2.3.3,<3.0.0)",
     "ipykernel (>=7.1.0,<8.0.0)",
-    "streamlit (>=1.52.0,<2.0.0)"]
+    "streamlit (>=1.52.0,<2.0.0)",
+    "pywin32 (>=311,<312)"]
 
 [tool.poetry]
 packages = [{include = "extrato_sos", from = "src"}]
