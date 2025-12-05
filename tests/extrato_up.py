@@ -1,15 +1,10 @@
 import streamlit as st
 import time
 import os
-
-# Função que remove arquivo antigo
-def verificar_e_remover_arquivo(pasta, nome_arquivo):
-    caminho_arquivo = os.path.join(pasta, nome_arquivo)
-    if os.path.isfile(caminho_arquivo):
-        os.remove(caminho_arquivo)
+#from scripts.functions.mover_arquivo import verificar_e_remover_arquivo
 
 st.set_page_config(page_title="extrato-sos", layout="wide")
-st.title("📊 Extrato-SOS - Análise Financeira de Extratos")
+st.title("📊 Extrato-SOS - Resultado Financeiro")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PASTA_ARQUIVOS = os.path.join(BASE_DIR, "..", "src", "extrato_sos", "arquivos")
@@ -37,6 +32,4 @@ if uploaded_files:
             f.write(uploaded_file.getbuffer())
 
         st.success(f"Arquivo salvo! {nome_arquivo}")
-time.sleep(15)
-st.success("Arquivos processados com sucesso. Encerrando...")
 st.stop()
