@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "name": "RelatorioFinanceiro_Ficticio",
+  "layout": {
+    "pages": [
+      {
+        "name": "Pagina1",
+        "displayName": "Visão Geral",
+        "visualContainers": [
+          {
+            "name": "TotalSalesCard",
+            "type": "card",
+            "layout": {
+              "x": 20,
+              "y": 20,
+              "z": 0,
+              "width": 300,
+              "height": 120
+            },
+            "dataBindings": {
+              "measures": [
+                {
+                  "table": "Sales",
+                  "measure": "Total Sales"
+                }
+              ]
+            }
+          },
+          {
+            "name": "SalesByProductChart",
+            "type": "columnChart",
+            "layout": {
+              "x": 20,
+              "y": 160,
+              "z": 0,
+              "width": 800,
+              "height": 400
+            },
+            "dataBindings": {
+              "category": {
+                "table": "Products",
+                "column": "ProductName"
+              },
+              "values": [
+                {
+                  "table": "Sales",
+                  "measure": "Total Sales"
+                }
+              ]
+            }
+          },
+          {
+            "name": "SalesTable",
+            "type": "table",
+            "layout": {
+              "x": 20,
+              "y": 580,
+              "z": 0,
+              "width": 1200,
+              "height": 300
+            },
+            "dataBindings": {
+              "rows": {
+                "columns": [
+                  {
+                    "table": "Sales",
+                    "column": "SaleID"
+                  },
+                  {
+                    "table": "Customers",
+                    "column": "CustomerName"
+                  },
+                  {
+                    "table": "Products",
+                    "column": "ProductName"
+                  },
+                  {
+                    "table": "Sales",
+                    "column": "Quantity"
+                  },
+                  {
+                    "table": "Sales",
+                    "column": "SaleDate"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

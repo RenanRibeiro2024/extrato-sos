@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "pbipExperience": "enabled"
+  },
+  "dataset": {
+    "path": "dataset"
+  },
+  "report": {
+    "path": "report"
+  }
+}
