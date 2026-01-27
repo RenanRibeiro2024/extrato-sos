@@ -1,0 +1,29 @@
+relationship AutoDetected_c494ae67-08b0-4ca5-9333-2bbef11344f5
+	fromColumn: F_Movimentacoes.Funcionario
+	toColumn: D_Funcionarios.Funcionario
+
+relationship 3eeb5b18-d426-8cef-c527-497473af132e
+	fromColumn: F_Movimentacoes.Categoria_DRE
+	toColumn: D_Categorias.Categoria_DRE
+
+relationship 357c7a93-c402-d66d-d4c9-8021f5d81301
+	fromColumn: F_Movimentacoes.Fornecedor
+	toColumn: D_Fornecedor.Fornecedor
+
+relationship 354d8e46-24de-6c29-b02e-e3163d294b57
+	fromColumn: F_Movimentacoes.Cliente
+	toColumn: D_Clientes.Cliente
+
+relationship 02ff72df-a736-4505-b087-2a13c7519f5c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: D_Calendario.Date
+	toColumn: LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9.Date
+
+relationship fd22e2c5-91da-f621-e55a-121794acd8e7
+	fromColumn: F_Movimentacoes.Data
+	toColumn: D_Calendario.Date
+
+relationship b4317def-e012-335b-305d-e8614faa97b0
+	fromColumn: D_Categorias.Categoria_DRE
+	toColumn: D_PlanoDeContas.DRE
+

@@ -1,0 +1,210 @@
+table F_Movimentacoes
+	lineageTag: 9c9bfc24-1e8a-40e4-8951-da5ea41de61f
+
+	column Nome_Origem
+		dataType: string
+		lineageTag: f2826f12-d5f9-4bcb-b82e-bcd324fcabaa
+		summarizeBy: none
+		sourceColumn: Nome_Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c13da3ee-522f-4e2f-8ea1-c1269c5649f9
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Produto
+		dataType: string
+		lineageTag: a1d16084-1bd1-4678-af37-b1fd68176607
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantidade
+		dataType: int64
+		lineageTag: bddd046a-9f03-4f6a-8a5c-0ee8a71db038
+		summarizeBy: sum
+		sourceColumn: Quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Preco_Unitario
+		dataType: string
+		lineageTag: 8e4769cc-31e7-4519-b348-6dd1113f1347
+		summarizeBy: none
+		sourceColumn: Preco_Unitario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor_Total
+		dataType: double
+		lineageTag: a6a61bee-769b-4f4c-b4a2-7ddd9c3a74d5
+		summarizeBy: sum
+		sourceColumn: Valor_Total
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cliente
+		dataType: string
+		lineageTag: 7fd60419-a34a-4aa8-b833-21f72e370c14
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fornecedor
+		dataType: string
+		lineageTag: d4947614-a68b-4fa4-a914-6d555bb75cbb
+		summarizeBy: none
+		sourceColumn: Fornecedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custo
+		dataType: double
+		lineageTag: 60f62ec7-3fda-476d-8b87-8f1c3d65908c
+		summarizeBy: sum
+		sourceColumn: Custo
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ano
+		dataType: string
+		lineageTag: f16903ae-87ff-4fa6-a5dc-ef9b9fc653e3
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 3a2e761e-75d7-4467-9b15-b64874934866
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Funcionario
+		dataType: string
+		lineageTag: df70bb17-8be4-4ee4-b6a8-83f33c6b1453
+		summarizeBy: none
+		sourceColumn: Funcionario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cargo
+		dataType: string
+		lineageTag: 8a56c37f-0256-4aca-acbf-4dbc8a7d0709
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custo_Diario_Funcionario
+		dataType: double
+		lineageTag: 448bea45-d869-43f6-9cb3-6eb27c194255
+		summarizeBy: sum
+		sourceColumn: Custo_Diario_Funcionario
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tipo_Operacao
+		dataType: string
+		lineageTag: b442eacb-170a-40c9-ac33-e28a77f810c2
+		summarizeBy: none
+		sourceColumn: Tipo_Operacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria_Produto
+		dataType: string
+		lineageTag: 70a8eec7-de23-447d-a99a-4fc87f2947d9
+		summarizeBy: none
+		sourceColumn: Categoria_Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Impostos
+		dataType: double
+		lineageTag: c3334874-e0dc-4d60-a96b-2791c62986dc
+		summarizeBy: sum
+		sourceColumn: Impostos
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Categoria_DRE
+		dataType: string
+		lineageTag: 89425e7c-ed99-4f90-b74e-1c2835e14859
+		summarizeBy: none
+		sourceColumn: Categoria_DRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome_Operacao =
+			
+			VAR Nome_Cliente = F_Movimentacoes[Cliente]
+			VAR Nome_Fornecedor = F_Movimentacoes[Fornecedor]
+			VAR Nome_Funcionario = F_Movimentacoes[Funcionario]
+			
+			VAR Tipo_Operacao = F_Movimentacoes[Tipo_Operacao]
+			VAR Cod = F_Movimentacoes[Categoria_DRE]
+			
+			RETURN
+			    IF(Cod = "(+) FATURAMENTO BRUTO", Nome_Cliente,
+			    IF(Tipo_Operacao = "Compra", Nome_Fornecedor,
+			    IF(Cod = "(-) DESPESA OPERACIONAL", Nome_Funcionario,
+			    IF(Cod = "(-) DESPESAS OPERACIONAIS GERAIS", Nome_Fornecedor,
+			    IF(Cod = "(-) DESPESAS ADMINISTRATIVAS", Nome_Fornecedor,
+			    IF(Cod = "(-) INVESTIMENTOS", Nome_Fornecedor,
+			    IF(Cod = "(-) DESPESAS EXTRAS", Nome_Fornecedor
+			    )))))))
+		lineageTag: 19ab2c2a-319c-4a7f-9464-4d7c1540b607
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_Movimentacoes = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ribei\Desktop\Cursos\VsCode\Repositorios\extrato-sos\src\extrato_sos\consolidado\consolidado.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Data", type date}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado", "Categoria_DRE", each if [Tipo Operação] = "Compra" then "(-) DESPESAS OPERACIONAIS GERAIS" else if[Tipo Operação] = "Despesa Operacional" then "(-) DESPESA OPERACIONAL" else if [Tipo Operação] = "Venda" then "(+) FATURAMENTO BRUTO" else if [Tipo Operação] = "Despesa Administrativa" then "(-) DESPESAS ADMINISTRATIVAS" else if [Tipo Operação] = "Investimento" then "(-) INVESTIMENTOS" else if [Tipo Operação] = "Despesa Extra" then "(-) DESPESAS EXTRAS" else if [Tipo Operação] = "Resultado Financeiro" then "(=) RESULTADO FINANCEIRO" else ""),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Coluna Condicional Adicionada",{"Nome da Origem", "Data", "Ano", "Mês", "Funcionario", "Cargo", "Custo Diário Funcionário", "Tipo Operação", "Produto", "Categoria Produto", "Categoria_DRE", "Quantidade", "Preço Unitário", "Valor Total", "Impostos", "Custo", "Cliente", "Fornecedor"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Reordenadas",{{"Nome da Origem", "Nome_Origem"}, {"Mês", "Mes"}, {"Custo Diário Funcionário", "Custo_Diario_Funcionario"}, {"Tipo Operação", "Tipo_Operacao"}, {"Categoria Produto", "Categoria_Produto"}, {"Preço Unitário", "Preco_Unitario"}, {"Valor Total", "Valor_Total"}}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"Quantidade", Int64.Type}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

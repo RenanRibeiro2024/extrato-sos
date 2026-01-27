@@ -1,0 +1,30 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["F_Movimentacoes","D_Categorias","D_Clientes","D_Fornecedor","D_Funcionarios"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table F_Movimentacoes
+ref table D_Calendario
+ref table D_PlanoDeContas
+ref table D_Categorias
+ref table D_Clientes
+ref table D_Fornecedor
+ref table D_Funcionarios
+ref table Medidas_DRE
+ref table DateTableTemplate_d6b6d8a0-69d3-452a-89f5-67e05904d437
+ref table LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9
+ref table Medidas_Receitas
+ref table Medidas_Despesas
+ref table Medidas_Func
+
+ref cultureInfo pt-BR
+

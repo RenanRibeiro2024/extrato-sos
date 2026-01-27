@@ -1,0 +1,74 @@
+table Medidas_Receitas
+	lineageTag: 1a5a8452-b5fd-4381-8799-3ced9ce4797b
+
+	measure '% Lucro' = [Resultado_Financeiro] / [Receita]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9324ee29-0c2e-4b98-9614-43d28cb193d5
+
+	measure frequencia_absoluta_produtos = CALCULATE(SUM(F_Movimentacoes[Quantidade]))
+		formatString: 0
+		lineageTag: 5b3ac1ac-a76b-4be0-b925-d12deb955be9
+
+	measure Frequencia_Relativa_Produtos = ```
+			
+			DIVIDE([Frequencia_Absoluta_Produtos], CALCULATE([Frequencia_Absoluta_Produtos],ALL( F_Movimentacoes[Produto] ))
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eac010ed-506d-45fa-b31e-77a44b6eee07
+
+	measure Frequencia_Acumulada_Produtos = ```
+			
+			VAR FreqAtual =
+			    [Frequencia_Relativa_Produtos]
+			RETURN
+			    CALCULATE(SUMX(FILTER(ALL ( F_Movimentacoes[Produto] ),[Frequencia_Relativa_Produtos] >= FreqAtual),
+			    [Frequencia_Relativa_Produtos]))
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 598c53fa-1236-455c-93a2-5c001d0ec320
+
+	measure Custo_Produto = CALCULATE(SUM(F_Movimentacoes[Custo]))
+		lineageTag: f82131f1-91ec-4d2e-b3f4-5642f23e44ed
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Receita_Produto = CALCULATE(SUM(F_Movimentacoes[Valor_Total]))
+		lineageTag: a3727e01-5589-4428-924e-3dcffc89bee7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Lucro$ =
+			
+			[Receita] - [Custo_Produto]
+		lineageTag: 95491118-d773-4521-a730-cdf9f2936be4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Custo_Produto' = ```
+			
+			DIVIDE ( [Custo_Produto], [Receita_Produto] )
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 795a0937-2280-4097-ba79-ed8327686751
+
+	column Column
+		formatString: 0
+		lineageTag: ee78395e-96b8-44bd-9f16-adc1f533c449
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas_Receitas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 640b74dcac134a79a958a540b8998b67
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -1,0 +1,32 @@
+table D_Clientes
+	lineageTag: f8232bee-eb12-48f4-9d5f-e6a4c72f4caf
+
+	column Cliente
+		dataType: string
+		lineageTag: 74c54935-1f27-4fdf-a353-bf6c0195b3a1
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_Clientes = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ribei\Desktop\Cursos\VsCode\Repositorios\extrato-sos\src\extrato_sos\consolidado\consolidado.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Data", type date}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado", "Categoria_DRE", each if [Tipo Operação] = "Compra" then "(-) DESPESAS OPERACIONAIS GERAIS" else if[Tipo Operação] = "Despesa Operacional" then "(-) DESPESA OPERACIONAL" else if [Tipo Operação] = "Venda" then "(+) FATURAMENTO BRUTO" else if [Tipo Operação] = "Despesa Administrativa" then "(-) DESPESAS ADMINISTRATIVAS" else if [Tipo Operação] = "Investimento" then "(-) INVESTIMENTOS" else if [Tipo Operação] = "Despesa Extra" then "(-) DESPESAS EXTRAS" else if [Tipo Operação] = "Resultado Financeiro" then "(=) RESULTADO FINANCEIRO" else ""),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Coluna Condicional Adicionada",{"Nome da Origem", "Data", "Ano", "Mês", "Funcionario", "Cargo", "Custo Diário Funcionário", "Tipo Operação", "Produto", "Categoria Produto", "Categoria_DRE", "Quantidade", "Preço Unitário", "Valor Total", "Impostos", "Custo", "Cliente", "Fornecedor"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Reordenadas",{{"Nome da Origem", "Nome_Origem"}, {"Mês", "Mes"}, {"Custo Diário Funcionário", "Custo_Diario_Funcionario"}, {"Tipo Operação", "Tipo_Operacao"}, {"Categoria Produto", "Categoria_Produto"}, {"Preço Unitário", "Preco_Unitario"}, {"Valor Total", "Valor_Total"}}),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Colunas Renomeadas",{"Cliente"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas"),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Duplicatas Removidas", each ([Cliente] <> "-"))
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,43 @@
+table Medidas_Despesas
+	lineageTag: 52862988-7a0f-490b-a575-e9e52f1280ab
+
+	measure Despesa2 = ```
+			
+				ABS([Despesas])
+			```
+		lineageTag: 96bed4d0-a138-4177-a504-8a97e8475560
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Despesas Mês Anterior' = ```
+			
+				ABS(IF([Despesas] = 0, BLANK(), CALCULATE([Despesas], DATEADD(D_Calendario[Date], -1, MONTH))))
+			```
+		lineageTag: 0676697b-02af-47f7-8a93-c9f3f6ebba72
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Diff_MesAnterior = ```
+			
+				IF([Despesa2] = 0, BLANK(), DIVIDE([Despesa2], [Despesas Mês Anterior], 0))
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7c4c2428-b3f7-4549-99ac-206343b9bd2b
+
+	column Column
+		formatString: 0
+		lineageTag: 4289c85c-c271-4db9-9f62-85982e9d5841
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas_Despesas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 81b016e5e8774dedad0ca4764d56c234
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

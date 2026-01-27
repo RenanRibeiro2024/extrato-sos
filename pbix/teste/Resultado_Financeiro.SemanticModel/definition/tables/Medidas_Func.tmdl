@@ -1,0 +1,39 @@
+table Medidas_Func
+	lineageTag: 3d22cbbd-50ad-4f0e-b4ff-13bd7bb51e8b
+
+	measure 'Salario Mensal (Dias Uteis)' = ```
+			
+			VAR DiasUteis =
+			    CALCULATE (
+			        COUNTROWS ( D_Calendario ),
+			        FILTER (
+			            D_Calendario,
+			            WEEKDAY ( D_Calendario[Date], 2 ) <= 5
+			        )
+			    )
+			RETURN
+			    SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) * DiasUteis
+			
+			```
+		formatString: 0
+		lineageTag: 9357b2be-90e7-41b1-a7c9-1085b51734ad
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Column
+		formatString: 0
+		lineageTag: 6795a443-a361-4f89-96ed-e00131af76ce
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas_Func = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 5d15db146c7448988ab07767f346e18e
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

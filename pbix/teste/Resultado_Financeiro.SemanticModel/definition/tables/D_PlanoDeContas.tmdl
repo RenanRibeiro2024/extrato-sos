@@ -1,0 +1,59 @@
+table D_PlanoDeContas
+	lineageTag: 667c9d81-b89c-456a-bcf8-45a58618f8f7
+
+	column DRE
+		lineageTag: 64c8686c-f6d8-4c0c-9cce-e3d899d2d8a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DRE]
+		sortByColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice
+		dataType: int64
+		formatString: 0
+		lineageTag: e5f3a090-4ce6-40ed-9efd-ef06f7b2e5e5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Indice]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cor
+		lineageTag: 965ab3ac-7e89-4a6d-93f1-acb19ec15ddc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Cor]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_PlanoDeContas = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "DRE", STRING,
+				    "Indice", STRING,
+				    "Cor", STRING,
+				    {
+				        {"(+) FATURAMENTO BRUTO", 1, 2},
+				        {"(-) IMPOSTOS", 2, 0},
+				        {"(=) FATURAMENTO LIQUIDO", 3, 1},
+				        {"(-) DESPESA OPERACIONAL", 4, 0},
+				        {"(-) DESPESAS OPERACIONAIS GERAIS", 8, 0},
+				        {"(=) RESULTADO OPERACIONAL", 11, 1},
+				        {"(-) PRO-LABORE", 12, 0},
+				        {"(=) RESULTADO OPERACIONAL GERAL", 13, 1},
+				        {"(-) DESPESAS ADMINISTRATIVAS", 14, 0},
+				        {"(=) RESULTADO BRUTO", 15, 1},
+				        {"(-) INVESTIMENTOS", 16, 0},
+				        {"(-) DESPESAS EXTRAS", 17, 0},
+				        {"(=) RESULTADO FINANCEIRO", 18, 1},
+				        {"(+) RECEBIMENTO EXTRA-OPERACIONAL", 19, 0},
+				        {"(-) RETIRADA DE DIVIDENDOS", 20, 0},
+				        {"(=) RESULTADO LÍQUIDO", 21, 1}
+				    }
+				)
+
+	annotation PBI_Id = 01aad7ce89ef4bf8bc85074138657073
+

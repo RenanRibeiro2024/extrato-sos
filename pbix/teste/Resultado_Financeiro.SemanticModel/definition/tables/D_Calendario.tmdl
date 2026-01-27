@@ -1,0 +1,92 @@
+table D_Calendario
+	lineageTag: 29d0f9ee-bd76-405a-8bfb-784e65f546b8
+
+	column Date
+		formatString: Short Date
+		lineageTag: 6162169d-2982-4cc8-9b46-508e3a6094ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 02ff72df-a736-4505-b087-2a13c7519f5c
+			defaultHierarchy: LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		formatString: 0
+		lineageTag: 64bf4528-b3a4-4b47-95dc-72fbda69bbc0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dia]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês
+		lineageTag: 2ea53dda-fe7c-4ad4-ba3d-65eae6a56083
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mês]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		formatString: 0
+		lineageTag: 2bfe9338-6a1a-4ca6-ba22-f1dd1561e19f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: bd766e06-85db-42d2-82b1-f623930e3c99
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesABV
+		lineageTag: 47d63fb0-77a7-4f2e-9a3a-f40f580a9bca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MesABV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNUM
+		formatString: 0
+		lineageTag: 1c36b908-e3bd-4ad7-b2af-a2ef8624fdd4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MesNUM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes/Ano = CONCATENATE(D_Calendario[MesABV], CONCATENATE("/", D_Calendario[Ano]))
+		lineageTag: ae74439a-8cf4-49b3-abc7-07dc1d611d3f
+		summarizeBy: none
+		sortByColumn: MesNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_Calendario = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS(
+				    CALENDAR(DATE(2014, 1, 1), MAX(F_Movimentacoes[Data])),
+				    "Dia", DAY([Date]),
+				    "Mês", FORMAT([Date], "MMMM"),
+				    "Ano", YEAR([Date]),
+				    "Trimestre", "T" & CEILING(MONTH([Date])/3, 1),
+				    "MesABV", FORMAT([Date], "MMM"),
+				    "MesNUM", MONTH([Date]) 
+				)
+				```
+
+	annotation PBI_Id = b968daf66c2b49a6956663bfadd1be30
+

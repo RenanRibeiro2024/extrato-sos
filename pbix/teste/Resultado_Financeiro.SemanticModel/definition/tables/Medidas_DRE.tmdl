@@ -1,0 +1,182 @@
+table Medidas_DRE
+	lineageTag: 896d4dbe-0059-4ced-93ef-3c8834f296f6
+
+	measure Valor_DRE = ```
+			
+			VAR Cod = SELECTEDVALUE(D_PlanoDeContas[DRE])
+			RETURN
+			    IF(Cod = "(+) FATURAMENTO BRUTO", [Receita],
+			    IF(Cod = "(-) IMPOSTOS", CALCULATE([Impostos], ALL(D_PlanoDeContas)),
+			    IF(Cod = "(=) FATURAMENTO LIQUIDO" && NOT(ISINSCOPE(F_Movimentacoes[Nome_Operacao])), CALCULATE([Faturamento_Liquido], ALL(D_PlanoDeContas)),
+			    IF(Cod = "(-) DESPESA OPERACIONAL", [Despesas_Operacionais],
+			    IF(Cod = "(-) DESPESAS OPERACIONAIS GERAIS", [Despesas_Operacionais_Gerais],
+			    IF(Cod = "(=) RESULTADO OPERACIONAL" && NOT(ISINSCOPE(F_Movimentacoes[Nome_Operacao])), CALCULATE([Resultado_Operacional], ALL(D_PlanoDeContas)),
+			    IF(Cod = "(-) DESPESAS ADMINISTRATIVAS", [Despesas administrativas],
+			    IF(Cod = "(=) RESULTADO BRUTO" && NOT(ISINSCOPE(F_Movimentacoes[Nome_Operacao])), CALCULATE([Resultado Bruto], ALL(D_PlanoDeContas)),
+			    IF(Cod = "(-) INVESTIMENTOS", [Investimentos],
+			    IF(Cod = "(-) DESPESAS EXTRAS", [Despesas_Extras],
+			    IF(Cod = "(=) RESULTADO FINANCEIRO" && NOT(ISINSCOPE(F_Movimentacoes[Nome_Operacao])), CALCULATE([Resultado_Financeiro], ALL(D_PlanoDeContas))
+			    
+			)))))))))))
+			```
+		lineageTag: 1db5d4a5-8467-4741-a93e-5e87244dab79
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Receita = CALCULATE(SUM(F_Movimentacoes[Valor_Total]), D_Categorias[Categoria_DRE] = "(+) FATURAMENTO BRUTO")
+		lineageTag: abe80c93-1f7c-4ce2-b51b-515f008100a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Impostos = CALCULATE(SUM(F_Movimentacoes[Impostos]), D_Categorias[Categoria_DRE] = "(-) DESPESAS OPERACIONAIS GERAIS") *-1
+		lineageTag: 5f3ae856-e7c2-40a7-8287-f7be73c4705f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Faturamento_Liquido = [Receita] + [Impostos]
+		lineageTag: 5450726c-bc04-4add-a2ee-9ae17a5d23df
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Despesas_Operacionais = ```
+			
+			    CALCULATE(SUM(F_Movimentacoes[Valor_Total]), F_Movimentacoes[Categoria_DRE] = "(-) DESPESA OPERACIONAL") *-1
+			```
+		lineageTag: 4176554c-37ed-4868-97be-2fe373e81272
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Nome_Cliente = ALLSELECTED(D_Clientes[Cliente])
+		lineageTag: 55c43792-7ebb-4931-af3b-ac2b7e67c53a
+
+	measure Despesas_Operacionais_Gerais = ```
+			
+			    CALCULATE(SUM(F_Movimentacoes[Valor_Total]), F_Movimentacoes[Categoria_DRE] = "(-) DESPESAS OPERACIONAIS GERAIS") *-1
+			```
+		lineageTag: 5237dc3b-c6b8-4ab4-bf5a-015def4f289d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Resultado_Operacional = ```
+			
+			    [Faturamento_Liquido] + [Despesas_operacionais] + [Despesas_Operacionais_Gerais]
+			```
+		lineageTag: 1a050620-29be-4f14-a449-0a63c08e643f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Despesas administrativas' = ```
+			
+			    CALCULATE(SUM(F_Movimentacoes[Valor_Total]), F_Movimentacoes[Categoria_DRE] = "(-) DESPESAS ADMINISTRATIVAS") *-1
+			```
+		lineageTag: 0acdfe37-712d-42c9-8947-74ae1ddd869c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Bruto' = ```
+			
+			    [Resultado_Operacional] + [Despesas administrativas]
+			```
+		lineageTag: d3cb0552-9d81-4bc9-83d1-52fa42601654
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Investimentos = ```
+			
+			    CALCULATE(SUM(F_Movimentacoes[Valor_Total]), F_Movimentacoes[Categoria_DRE] = "(-) INVESTIMENTOS") *-1
+			```
+		lineageTag: 73f5cab9-1d29-4bc7-8359-0734866b8c99
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Despesas_Extras = ```
+			
+			    CALCULATE(SUM(F_Movimentacoes[Valor_Total]), F_Movimentacoes[Categoria_DRE] = "(-) DESPESAS EXTRAS") *-1
+			```
+		lineageTag: 4976d25c-83cc-4a99-9e18-bec7f0cf720c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Resultado_Financeiro = ```
+			
+			   [Resultado Bruto] + [Investimentos] + [Despesas_Extras] 
+			```
+		lineageTag: 2f01cc5d-91cd-4865-a6f1-9de3e4cc04c2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TxtDiaAtual = ```
+			
+			var primeiroDia = MIN(D_Calendario[Date])
+			var ultimoDia = MAX(D_Calendario[Date])
+			return
+			    IF(primeiroDia=ultimoDia,CONCATENATE("MOVIMENTAÇÃO DE ", ultimoDia),
+			        CONCATENATE("MOVIMENTAÇÃO DE ",
+			            CONCATENATE(primeiroDia,
+			                CONCATENATE(" ATÉ ", ultimoDia))))
+			
+			```
+		lineageTag: 394086c1-3b52-401a-9e70-7108de0a274c
+
+	measure CorFundo = ```
+			
+			VAR vCor = MAX(D_PlanoDeContas[Cor])
+			VAR Receita = "#B0E0E6"
+			VAR vDefault = "DEFAULT"
+			VAR vCorFundoReceita = "#D8BFD8"
+			VAR vResultado = "#000000"
+			return
+			//1 = RESULTADOS
+			//2 = RECEITA
+			//3 = FATURAMENTO
+			
+			SWITCH(
+			    TRUE(),
+			    vCor = "1",Receita,
+			    vCor = "2",vCorFundoReceita,
+			    vCor = "3",vResultado,
+			    vDefault
+			    )
+			
+			```
+		lineageTag: 7abcd6bd-d293-4cb8-b9d7-380313319ae9
+
+	measure DataMaisRecente = ```
+			
+			    CALCULATE(MAX(D_Calendario[Date]), FILTER(F_Movimentacoes, F_Movimentacoes[Data]))
+			```
+		formatString: Short Date
+		lineageTag: d22f28ea-22d0-4ac7-8769-f2b3036f6c98
+
+	measure '% DRE' =
+			
+			var ReceitaSemFiltro = CALCULATE([Receita], ALL('D_PlanoDeContas'))
+			RETURN DIVIDE([Valor_DRE], ReceitaSemFiltro, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 17016560-5c7b-4e87-8d91-b259a0c7d301
+
+	measure Despesas = ```
+			
+			    [Impostos] + [Despesas_Operacionais] + [Despesas_Operacionais_Gerais] + [Despesas administrativas] + [Investimentos] + [Despesas_Extras]
+			```
+		lineageTag: d3c53def-f0a8-4262-8a1c-77468b6d465a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cliente
+		formatString: 0
+		lineageTag: fb6c915b-28f0-42a7-b9f1-f970b9bce361
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Cliente]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas_DRE = calculated
+		mode: import
+		source = Row("Cliente", BLANK())
+
+	annotation PBI_Id = 9db45a2f1619427dac6c0e89d34f3f20
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

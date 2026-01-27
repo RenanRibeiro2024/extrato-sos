@@ -1,0 +1,201 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1137.6728269575165,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 461.71501630762975,
+            "y": 357.640592947258
+          },
+          "nodeIndex": "F_Movimentacoes",
+          "nodeLineageTag": "9c9bfc24-1e8a-40e4-8951-da5ea41de61f",
+          "size": {
+            "height": 370.94940681534592,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 182.28815167534913
+          },
+          "nodeIndex": "D_Fornecedor",
+          "nodeLineageTag": "adfdba37-7599-4bdf-b710-7f364f61117b",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 464.0388051259755,
+            "y": 73.968593137174921
+          },
+          "nodeIndex": "D_Categorias",
+          "nodeLineageTag": "e4a8b7ed-24fa-48f5-b04a-0eafef687471",
+          "size": {
+            "height": 154.56323675366741,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 935.65263506429721,
+            "y": 208.51411943992323
+          },
+          "nodeIndex": "D_Calendario",
+          "nodeLineageTag": "29d0f9ee-bd76-405a-8bfb-784e65f546b8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 744.04218935011318,
+            "y": 0
+          },
+          "nodeIndex": "D_PlanoDeContas",
+          "nodeLineageTag": "667c9d81-b89c-456a-bcf8-45a58618f8f7",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1219.6526350642971,
+            "y": 428.208572221093
+          },
+          "nodeIndex": "D_Clientes",
+          "nodeLineageTag": "f8232bee-eb12-48f4-9d5f-e6a4c72f4caf",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1503.6526350642971,
+            "y": 380.208572221093
+          },
+          "nodeIndex": "Medidas_DRE",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2071.6526350642971,
+            "y": 380.208572221093
+          },
+          "nodeIndex": "Medidas_Despesas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1787.6526350642971,
+            "y": 380.208572221093
+          },
+          "nodeIndex": "Medidas_Receitas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 783.962924803295,
+            "y": 808.417144442186
+          },
+          "nodeIndex": "D_Funcionarios",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2355.6526350642971,
+            "y": 380.208572221093
+          },
+          "nodeIndex": "Medidas_Func",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 63.287087723234038,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 422.20000076293945,
+            "y": 0
+          },
+          "nodeIndex": "D_Categorias",
+          "nodeLineageTag": "e4a8b7ed-24fa-48f5-b04a-0eafef687471",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 129.20000076293945,
+            "y": 69
+          },
+          "nodeIndex": "D_PlanoDeContas",
+          "nodeLineageTag": "667c9d81-b89c-456a-bcf8-45a58618f8f7",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "D_PlanoDeContas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

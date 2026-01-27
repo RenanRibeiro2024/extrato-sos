@@ -1,0 +1,581 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "2b13498deadd023a4daf",
+  "position": {
+    "x": 438.01926158630431,
+    "y": 81.8849064686563,
+    "z": 8000,
+    "height": 625.18476208609013,
+    "width": 842.2447522490362,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F_Movimentacoes"
+                    }
+                  },
+                  "Property": "Produto"
+                }
+              },
+              "queryRef": "F_Movimentacoes.Produto",
+              "nativeQueryRef": "Produto",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F_Movimentacoes"
+                    }
+                  },
+                  "Property": "Nome_Operacao"
+                }
+              },
+              "queryRef": "F_Movimentacoes.Nome_Operacao",
+              "nativeQueryRef": "Nome_Operacao",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "frequencia_absoluta_produtos"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Contagem_Produtos",
+              "nativeQueryRef": "Freq_Absoluta",
+              "displayName": "Freq_Absoluta"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Frequencia_Relativa_Produtos"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Frequencia_Relativa_Produtos",
+              "nativeQueryRef": "Freq_Relativa",
+              "displayName": "Freq_Relativa"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Frequencia_Acumulada_Produtos"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Frequencia_Acumulada_Produtos",
+              "nativeQueryRef": "Freq_Acumulada",
+              "displayName": "Freq_Acumulada"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Custo_Produto"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Custo_Produto",
+              "nativeQueryRef": "Custo",
+              "displayName": "Custo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Receita_Produto"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Receita_Produto",
+              "nativeQueryRef": "Receceita",
+              "displayName": "Receceita"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Lucro$"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Lucro_Produto",
+              "nativeQueryRef": "Lucro$"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas_Receitas"
+                  }
+                },
+                "Property": "Frequencia_Relativa_Produtos"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "F_Movimentacoes.Produto"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "F_Movimentacoes.Nome_Operacao"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.13217681103687D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Frequencia_Acumulada_Produtos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113.35796240212176D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Custo_Produto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.14001923663041D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Receita_Produto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113.74882839409354D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Lucro_Produto"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabela de Frequência de Produtos'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "555c75512e27c094d76d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Tipo_Operacao"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "F_Movimentacoes",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Tipo_Operacao"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Compra'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Despesa Administrativa'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Despesa Extra'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Despesa Operacional'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Investimento'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Resultado Financeiro'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "e241a94d0957f9ddeb17",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "F_Movimentacoes"
+                      }
+                    },
+                    "Property": "Quantidade"
+                  }
+                },
+                "Function": 4
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "F_Movimentacoes"
+                          }
+                        },
+                        "Property": "Quantidade"
+                      }
+                    },
+                    "Function": 4
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "d5506944f486f305e09b",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "F_Movimentacoes"
+                      }
+                    },
+                    "Property": "Quantidade"
+                  }
+                },
+                "Function": 4
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "F_Movimentacoes"
+                          }
+                        },
+                        "Property": "Quantidade"
+                      }
+                    },
+                    "Function": 4
+                  }
+                },
+                "Scope": [
+                  {
+                    "RoleRef": {
+                      "Role": "Columns"
+                    }
+                  }
+                ]
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "5a083be7fac2976df5f4",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "F_Movimentacoes"
+                      }
+                    },
+                    "Property": "Quantidade"
+                  }
+                },
+                "Function": 4
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "F_Movimentacoes"
+                          }
+                        },
+                        "Property": "Quantidade"
+                      }
+                    },
+                    "Function": 4
+                  }
+                },
+                "Scope": [
+                  {
+                    "RoleRef": {
+                      "Role": "Rows"
+                    }
+                  }
+                ]
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

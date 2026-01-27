@@ -1,0 +1,47 @@
+table D_Funcionarios
+	lineageTag: 7d19904e-c930-4b97-8b1c-f251be888bf2
+
+	column Funcionario
+		dataType: string
+		lineageTag: 939ad581-9320-402b-bf95-04bd25c6c3a9
+		summarizeBy: none
+		sourceColumn: Funcionario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cargo
+		dataType: string
+		lineageTag: 31a2a950-e0a6-4a6c-9b94-8a4808cf4c52
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custo_Diario_Funcionario
+		dataType: string
+		lineageTag: 18cfa208-ac1c-44a5-a61b-e35089f8c93c
+		summarizeBy: none
+		sourceColumn: Custo_Diario_Funcionario
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_Funcionarios = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\ribei\Desktop\Cursos\VsCode\Repositorios\extrato-sos\src\extrato_sos\consolidado\consolidado.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Data", type date}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado", "Categoria_DRE", each if [Tipo Operação] = "Compra" then "(-) DESPESAS OPERACIONAIS GERAIS" else if[Tipo Operação] = "Despesa Operacional" then "(-) DESPESA OPERACIONAL" else if [Tipo Operação] = "Venda" then "(+) FATURAMENTO BRUTO" else if [Tipo Operação] = "Despesa Administrativa" then "(-) DESPESAS ADMINISTRATIVAS" else if [Tipo Operação] = "Investimento" then "(-) INVESTIMENTOS" else if [Tipo Operação] = "Despesa Extra" then "(-) DESPESAS EXTRAS" else if [Tipo Operação] = "Resultado Financeiro" then "(=) RESULTADO FINANCEIRO" else ""),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Coluna Condicional Adicionada",{"Nome da Origem", "Data", "Ano", "Mês", "Funcionario", "Cargo", "Custo Diário Funcionário", "Tipo Operação", "Produto", "Categoria Produto", "Categoria_DRE", "Quantidade", "Preço Unitário", "Valor Total", "Impostos", "Custo", "Cliente", "Fornecedor"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Reordenadas",{{"Nome da Origem", "Nome_Origem"}, {"Mês", "Mes"}, {"Custo Diário Funcionário", "Custo_Diario_Funcionario"}, {"Tipo Operação", "Tipo_Operacao"}, {"Categoria Produto", "Categoria_Produto"}, {"Preço Unitário", "Preco_Unitario"}, {"Valor Total", "Valor_Total"}}),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Colunas Renomeadas",{"Funcionario", "Cargo", "Custo_Diario_Funcionario"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"Funcionario"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
