@@ -134,6 +134,13 @@
                   }
                 ]
               }
+            },
+            "forcedSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }

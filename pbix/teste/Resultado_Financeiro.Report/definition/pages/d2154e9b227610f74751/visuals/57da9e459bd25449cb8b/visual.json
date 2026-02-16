@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "57da9e459bd25449cb8b",
   "position": {
-    "x": 0,
-    "y": 476.53846153846155,
+    "x": 10.397111913357401,
+    "y": 384.69314079422384,
     "z": 0,
-    "height": 230.76923076923077,
-    "width": 438.46153846153845,
+    "height": 278.41155234657043,
+    "width": 418.19494584837548,
     "tabOrder": 0
   },
   "visual": {
@@ -17,17 +17,28 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "D_Calendario"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "D_Calendario"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "Mes/Ano"
+                  "Level": "Mês"
                 }
               },
-              "queryRef": "D_Calendario.Mes/Ano",
-              "nativeQueryRef": "Mes/Ano",
+              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "Date Mês",
               "active": true
             }
           ]
@@ -294,51 +305,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e9d89feac84107ecd3ad",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "D_Calendario"
-              }
-            },
-            "Property": "Mes/Ano"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "22fbdd3c062e6ebb44c9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "% Lucro"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c6fe2c1f10da01a77da0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_DRE"
-              }
-            },
-            "Property": "Resultado_Financeiro"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

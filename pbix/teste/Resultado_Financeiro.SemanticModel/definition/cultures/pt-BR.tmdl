@@ -2496,7 +2496,7 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
-			          "Freq_Absoluta": {
+			          "Quantidade": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2696,7 +2696,7 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
-			          "Freq_Relativa": {
+			          "% Receita": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2729,7 +2729,7 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
-			          "Freq_Acumulada": {
+			          "% Acumulado": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2829,6 +2829,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.75
 			          }
+			        },
+			        {
+			          "Lucro$_Produto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2867,9 +2877,91 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_receita.lucro2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_Receitas",
+			          "ConceptualProperty": "Lucro$2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lucro$2": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "D_calendario_date_trimestre_in_D_calendario_date_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "D_calendario.date.trimestre"
+			          }
+			        },
+			        "D_calendario.date.ano": {
+			          "Target": {
+			            "Entity": "D_calendario.date.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "D_calendario.date.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "D_calendario.date.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_anos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.ano"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "anos_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_anos"
+			        }
+			      ]
+			    },
 			    "D_calendario_date_mê_has_D_calendario_date_dia": {
 			      "Binding": {
 			        "ConceptualEntity": "D_Calendario"
@@ -2999,72 +3091,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "mê_are_in_trimestres"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_ano_has_D_calendario_date_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.ano": {
-			          "Target": {
-			            "Entity": "D_calendario.date.ano"
-			          }
-			        },
-			        "D_calendario.date.trimestre": {
-			          "Target": {
-			            "Entity": "D_calendario.date.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.ano"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "anos_have_trimestres"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.trimestre"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_have_anos"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "D_calendario.date.trimestre"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "D_calendario.date.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_are_in_anos"
 			        }
 			      ]
 			    },
@@ -3513,6 +3539,39 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "D_funcionarios_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_medidas_receita_lucro2": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "medidas_receita.lucro2": {
+			          "Target": {
+			            "Entity": "medidas_receita.lucro2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "medidas_receita.lucro2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_lucro2"
 			        }
 			      ]
 			    },

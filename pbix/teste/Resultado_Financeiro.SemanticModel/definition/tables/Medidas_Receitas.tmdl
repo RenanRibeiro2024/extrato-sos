@@ -1,17 +1,17 @@
 table Medidas_Receitas
 	lineageTag: 1a5a8452-b5fd-4381-8799-3ced9ce4797b
 
-	measure '% Lucro' = [Lucro$] / [Receita]
+	measure '% Lucro' = [Resultado_Financeiro] / [Receita]
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 9324ee29-0c2e-4b98-9614-43d28cb193d5
 
-	measure frequencia_absoluta_produtos = CALCULATE(SUM(F_Movimentacoes[Quantidade]))
+	measure frequencia_absoluta_produtos = CALCULATE(COUNT(F_Movimentacoes[Quantidade]))
 		formatString: 0
 		lineageTag: 5b3ac1ac-a76b-4be0-b925-d12deb955be9
 
 	measure Frequencia_Relativa_Produtos = ```
 			
-			DIVIDE([Frequencia_Absoluta_Produtos], CALCULATE([Frequencia_Absoluta_Produtos],ALL( F_Movimentacoes[Produto] ))
+			DIVIDE([Receita], CALCULATE([Receita],ALL( F_Movimentacoes[Produto] ))
 			)
 			
 			```
@@ -40,9 +40,10 @@ table Medidas_Receitas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Lucro$ =
+	measure Lucro$ = ```
 			
-			[Receita] - [Custo_Produto]
+			[Receita] - [Custo_Produto] 
+			```
 		lineageTag: 95491118-d773-4521-a730-cdf9f2936be4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -55,9 +56,13 @@ table Medidas_Receitas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 795a0937-2280-4097-ba79-ed8327686751
 
-	measure Lucro$2 =
+	measure Lucro$2 = ```
 			
-			CALCULATE(SUMX(Medidas_Receitas, [Lucro$]))
+			CALCULATE([Lucro$], ALL(F_Movimentacoes[Produto]))
+			
+			
+			
+			```
 		lineageTag: f70def52-7ae3-4c0f-a63e-dba76581d130
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}

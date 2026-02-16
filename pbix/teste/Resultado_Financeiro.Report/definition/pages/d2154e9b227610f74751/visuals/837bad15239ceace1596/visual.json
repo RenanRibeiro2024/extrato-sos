@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "837bad15239ceace1596",
   "position": {
-    "x": 231.92307692307691,
-    "y": 169.61538461538461,
+    "x": 232.20216606498195,
+    "y": 177.90613718411552,
     "z": 8002,
-    "height": 77.3076923076923,
-    "width": 197.30769230769229,
+    "height": 77.400722021660656,
+    "width": 197.54512635379061,
     "tabOrder": 8002
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_Receitas"
+                      "Entity": "Medidas_DRE"
                     }
                   },
-                  "Property": "Lucro$2"
+                  "Property": "Resultado_Financeiro"
                 }
               },
-              "queryRef": "Medidas_Receitas.Lucro$2",
-              "nativeQueryRef": "Lucro$2"
+              "queryRef": "Medidas_DRE.Resultado_Financeiro",
+              "nativeQueryRef": "Resultado_Financeiro"
             }
           ]
         },
@@ -92,17 +92,17 @@
       "indicator": [
         {
           "properties": {
-            "indicatorDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "showIcon": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "indicatorDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

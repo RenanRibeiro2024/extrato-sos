@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "2b13498deadd023a4daf",
   "position": {
-    "x": 438.01926158630431,
-    "y": 81.8849064686563,
+    "x": 438.46153846153845,
+    "y": 81.92307692307692,
     "z": 8000,
-    "height": 625.18476208609013,
-    "width": 842.2447522490362,
+    "height": 625.38461538461536,
+    "width": 827.30769230769226,
     "tabOrder": 8000
   },
   "visual": {
@@ -61,38 +61,8 @@
                 }
               },
               "queryRef": "Medidas_Receitas.Contagem_Produtos",
-              "nativeQueryRef": "Freq_Absoluta",
-              "displayName": "Freq_Absoluta"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Receitas"
-                    }
-                  },
-                  "Property": "Frequencia_Relativa_Produtos"
-                }
-              },
-              "queryRef": "Medidas_Receitas.Frequencia_Relativa_Produtos",
-              "nativeQueryRef": "Freq_Relativa",
-              "displayName": "Freq_Relativa"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Receitas"
-                    }
-                  },
-                  "Property": "Frequencia_Acumulada_Produtos"
-                }
-              },
-              "queryRef": "Medidas_Receitas.Frequencia_Acumulada_Produtos",
-              "nativeQueryRef": "Freq_Acumulada",
-              "displayName": "Freq_Acumulada"
+              "nativeQueryRef": "Quantidade",
+              "displayName": "Quantidade"
             },
             {
               "field": {
@@ -136,7 +106,38 @@
                 }
               },
               "queryRef": "Medidas_Receitas.Lucro_Produto",
-              "nativeQueryRef": "Lucro$"
+              "nativeQueryRef": "Lucro$_Produto",
+              "displayName": "Lucro$_Produto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Frequencia_Relativa_Produtos"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Frequencia_Relativa_Produtos",
+              "nativeQueryRef": "% Receita",
+              "displayName": "% Receita"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Receitas"
+                    }
+                  },
+                  "Property": "Frequencia_Acumulada_Produtos"
+                }
+              },
+              "queryRef": "Medidas_Receitas.Frequencia_Acumulada_Produtos",
+              "nativeQueryRef": "% Acumulado",
+              "displayName": "% Acumulado"
             }
           ]
         }
@@ -190,7 +191,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "111.13217681103687D"
+                  "Value": "102.11780016611142D"
                 }
               }
             }
@@ -204,7 +205,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "113.35796240212176D"
+                  "Value": "90.96704760174337D"
                 }
               }
             }
@@ -218,7 +219,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "108.14001923663041D"
+                  "Value": "108.09161600784552D"
                 }
               }
             }
@@ -232,13 +233,55 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "113.74882839409354D"
+                  "Value": "108.10489782891692D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Medidas_Receitas.Lucro_Produto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170.35883988746187D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "F_Movimentacoes.Produto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100.75461445178098D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Contagem_Produtos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.88300204238904D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Receitas.Frequencia_Relativa_Produtos"
           }
         }
       ]
@@ -633,76 +676,6 @@
               }
             },
             "Property": "frequencia_absoluta_produtos"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "53d4c869bf79cf2ff219",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "Frequencia_Relativa_Produtos"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b169dce6f57d18c52801",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "Frequencia_Acumulada_Produtos"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e7d2e511d7890191862c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "Custo_Produto"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "14094afe9ec5c20a9598",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "Receita_Produto"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b380da2bd91886238935",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "Lucro$"
           }
         },
         "type": "Advanced"
