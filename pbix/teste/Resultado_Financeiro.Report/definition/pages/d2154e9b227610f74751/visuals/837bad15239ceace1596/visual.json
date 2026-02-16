@@ -1,93 +1,105 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "aef38ba3b66fa8596e44",
+  "name": "837bad15239ceace1596",
   "position": {
-    "x": 210.53494763425684,
-    "y": 83.97058605065736,
-    "z": 6000,
-    "height": 76.668795959295849,
-    "width": 204.45012255812227,
-    "tabOrder": 6000
+    "x": 231.92307692307691,
+    "y": 169.61538461538461,
+    "z": 8002,
+    "height": 77.3076923076923,
+    "width": 197.30769230769229,
+    "tabOrder": 8002
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "kpi",
     "query": {
       "queryState": {
-        "Values": {
+        "Indicator": {
           "projections": [
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_DRE"
+                      "Entity": "Medidas_Receitas"
                     }
                   },
-                  "Property": "Receita"
+                  "Property": "Lucro$2"
                 }
               },
-              "queryRef": "Medidas.Receita",
-              "nativeQueryRef": "Receita"
+              "queryRef": "Medidas_Receitas.Lucro$2",
+              "nativeQueryRef": "Lucro$2"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "D_Calendario"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
+                    }
+                  },
+                  "Level": "Ano"
+                }
+              },
+              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Ano",
+              "nativeQueryRef": "Date Ano"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas_DRE"
-                  }
-                },
-                "Property": "Receita"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "labels": [
+      "trendline": [
         {
           "properties": {
-            "labelDisplayUnits": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "categoryLabels": [
+      "goals": [
         {
           "properties": {
-            "bold": {
+            "showGoal": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "indicator": [
+        {
+          "properties": {
+            "indicatorDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             },
-            "show": {
+            "showIcon": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -109,6 +121,18 @@
                 }
               }
             },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
             "radius": {
               "expr": {
                 "Literal": {
@@ -120,18 +144,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
                 }
               }
             }
@@ -148,28 +160,29 @@
                 }
               }
             },
-            "show": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'center'"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Receita'"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#252423'"
-                    }
-                  }
+                  "Value": "'Resultado Financeiro'"
                 }
               }
             }
@@ -192,18 +205,6 @@
                   "Value": "0D"
                 }
               }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -214,14 +215,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "5D"
                 }
               }
             },
-            "left": {
+            "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "10D"
                 }
               }
             }

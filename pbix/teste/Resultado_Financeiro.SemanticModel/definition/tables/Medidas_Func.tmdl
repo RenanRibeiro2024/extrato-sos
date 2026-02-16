@@ -12,13 +12,12 @@ table Medidas_Func
 			        )
 			    )
 			RETURN
-			    SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) * DiasUteis
+			    (SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) + DiasUteis) *-1
 			
 			```
-		formatString: 0
 		lineageTag: 9357b2be-90e7-41b1-a7c9-1085b51734ad
 
-		annotation PBI_FormatHint = {"isDecimal":true}
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Column
 		formatString: 0

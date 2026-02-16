@@ -303,9 +303,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -565,6 +572,62 @@
             }
           ]
         }
+      },
+      {
+        "name": "0f9fd53edb6654e25a86",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Nome_Operacao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b3c632843d9028e7fece",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Despesas"
+              }
+            },
+            "Property": "Despesas Mês Anterior"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d05e4342dc69aab135de",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Despesas"
+              }
+            },
+            "Property": "Despesa2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0e42d32dc9fea4d27297",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Despesas"
+              }
+            },
+            "Property": "Diff_MesAnterior"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

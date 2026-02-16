@@ -122,9 +122,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -133,5 +140,87 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "517cff07dce6e3e10281",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "D_Calendario"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hierarquia de datas"
+              }
+            },
+            "Level": "Ano"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a3dc5df9458fa3c0dc0e",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "D_Calendario"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hierarquia de datas"
+              }
+            },
+            "Level": "Mês"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "69fbff4a3b706b81c8aa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Despesas"
+              }
+            },
+            "Property": "Despesa2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "75ba4e1e9e6612be4f2b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Despesas"
+              }
+            },
+            "Property": "Despesas Mês Anterior"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -17,17 +17,28 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "D_Calendario"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "D_Calendario"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "Mes/Ano"
+                  "Level": "Mês"
                 }
               },
-              "queryRef": "D_Calendario.Mes/Ano",
-              "nativeQueryRef": "Mes/Ano"
+              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "Date Mês"
             }
           ]
         }
@@ -65,9 +76,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }

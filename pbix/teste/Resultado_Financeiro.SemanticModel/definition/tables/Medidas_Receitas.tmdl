@@ -1,7 +1,7 @@
 table Medidas_Receitas
 	lineageTag: 1a5a8452-b5fd-4381-8799-3ced9ce4797b
 
-	measure '% Lucro' = [Resultado_Financeiro] / [Receita]
+	measure '% Lucro' = [Lucro$] / [Receita]
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 9324ee29-0c2e-4b98-9614-43d28cb193d5
 
@@ -54,6 +54,13 @@ table Medidas_Receitas
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 795a0937-2280-4097-ba79-ed8327686751
+
+	measure Lucro$2 =
+			
+			CALCULATE(SUMX(Medidas_Receitas, [Lucro$]))
+		lineageTag: f70def52-7ae3-4c0f-a63e-dba76581d130
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Column
 		formatString: 0

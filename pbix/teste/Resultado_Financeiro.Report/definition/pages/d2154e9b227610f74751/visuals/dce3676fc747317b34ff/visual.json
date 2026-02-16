@@ -74,7 +74,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2025L"
+                                "Value": "2024L"
                               }
                             }
                           ]
@@ -102,7 +102,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "2025L"
+                                      "Value": "2024L"
                                     }
                                   }
                                 ]
@@ -126,7 +126,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "2025"
+                            "0": "2024"
                           }
                         ]
                       }
@@ -156,9 +156,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }

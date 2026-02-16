@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "ecdf80d029f73f2de8e9",
+  "name": "b854b986e75464330013",
   "position": {
-    "x": 293.01204819277109,
-    "y": 75.823293172690768,
-    "z": 4000,
-    "height": 104.09638554216868,
-    "width": 219.75903614457832,
-    "tabOrder": 4000
+    "x": 231.92307692307691,
+    "y": 343.84615384615381,
+    "z": 8004,
+    "height": 77.3076923076923,
+    "width": 197.30769230769229,
+    "tabOrder": 8004
   },
   "visual": {
     "visualType": "kpi",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_Despesas"
+                      "Entity": "Medidas_Receitas"
                     }
                   },
-                  "Property": "Despesa2"
+                  "Property": "Lucro$"
                 }
               },
-              "queryRef": "Medidas_Despesas.Despesa2",
-              "nativeQueryRef": "Despesa2"
+              "queryRef": "Medidas_Receitas.Lucro$",
+              "nativeQueryRef": "Lucro$"
             }
           ]
         },
@@ -60,27 +60,35 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas_Despesas"
-                  }
-                },
-                "Property": "Despesa2"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
+      "trendline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "goals": [
+        {
+          "properties": {
+            "showGoal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "indicator": [
         {
           "properties": {
@@ -88,6 +96,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "showIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -124,6 +139,13 @@
                   "Value": "15D"
                 }
               }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -131,17 +153,10 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Despesa'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+                  "Value": "true"
                 }
               }
             },
@@ -156,6 +171,40 @@
                   }
                 }
               }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'% Lucro'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -166,14 +215,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "5D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "10D"
                 }
               }
             }
@@ -182,48 +231,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f052f4caa487eaf0aa6b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Despesas"
-              }
-            },
-            "Property": "Despesa2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b5812075ecd4da73c146",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

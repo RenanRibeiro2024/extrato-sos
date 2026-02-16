@@ -260,9 +260,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -290,6 +297,18 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -575,6 +594,118 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "9e2e6f9d3f6dae8322c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Produto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0c843f312aa8465ffed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Nome_Operacao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "64cf9199019d4a672727",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "frequencia_absoluta_produtos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "53d4c869bf79cf2ff219",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "Frequencia_Relativa_Produtos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b169dce6f57d18c52801",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "Frequencia_Acumulada_Produtos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e7d2e511d7890191862c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "Custo_Produto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "14094afe9ec5c20a9598",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "Receita_Produto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b380da2bd91886238935",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "Lucro$"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

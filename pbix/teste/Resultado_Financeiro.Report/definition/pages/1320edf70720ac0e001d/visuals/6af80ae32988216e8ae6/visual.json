@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "6af80ae32988216e8ae6",
   "position": {
-    "x": 9.9052340431963479,
-    "y": 173.34159575593608,
+    "x": 9.8734177215189867,
+    "y": 192.53164556962025,
     "z": 8000,
-    "height": 217.91514895031966,
-    "width": 179.53236703293382,
+    "height": 207.34177215189874,
+    "width": 178.95569620253164,
     "tabOrder": 8000
   },
   "visual": {
@@ -50,97 +50,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "D_Calendario",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "Mes/Ano"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'out/2024'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "D_Calendario"
-                                }
-                              },
-                              "Property": "Mes/Ano"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'out/2024'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "D_Calendario"
-                                    }
-                                  },
-                                  "Property": "Mes/Ano"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "out/2024"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
             }
           }
         }
@@ -170,7 +79,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
                 }

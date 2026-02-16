@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "25d2c1adfd13c63c819b",
   "position": {
-    "x": 10.977738320574884,
-    "y": 146.82725003768908,
+    "x": 11.566265060240964,
+    "y": 210.76305220883535,
     "z": 1000,
-    "height": 183.8771168696293,
-    "width": 262.09350240372538,
+    "height": 179.91967871485946,
+    "width": 260.88353413654619,
     "tabOrder": 1000
   },
   "visual": {
@@ -17,17 +17,28 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "D_Calendario"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "D_Calendario"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "Mes/Ano"
+                  "Level": "Mês"
                 }
               },
-              "queryRef": "D_Calendario.Mes/Ano",
-              "nativeQueryRef": "Mes/Ano"
+              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "Date Mês"
             }
           ]
         }
@@ -57,9 +68,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -183,6 +201,7 @@
             }
           ]
         },
+        "howCreated": "User",
         "objects": {
           "general": [
             {

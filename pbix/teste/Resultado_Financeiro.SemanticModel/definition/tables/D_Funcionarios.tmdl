@@ -18,12 +18,16 @@ table D_Funcionarios
 		annotation SummarizationSetBy = Automatic
 
 	column Custo_Diario_Funcionario
-		dataType: string
+		dataType: double
 		lineageTag: 18cfa208-ac1c-44a5-a61b-e35089f8c93c
 		summarizeBy: none
 		sourceColumn: Custo_Diario_Funcionario
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition D_Funcionarios = m
 		mode: import

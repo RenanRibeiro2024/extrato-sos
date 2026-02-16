@@ -3,10 +3,10 @@
   "name": "57da9e459bd25449cb8b",
   "position": {
     "x": 0,
-    "y": 279.4484903295413,
+    "y": 476.53846153846155,
     "z": 0,
-    "height": 231.35735478445747,
-    "width": 438.01926158630431,
+    "height": 230.76923076923077,
+    "width": 438.46153846153845,
     "tabOrder": 0
   },
   "visual": {
@@ -231,9 +231,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0
+                      "Percent": -0.5
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -261,8 +268,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#252423'"
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
                 }
@@ -286,5 +294,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e9d89feac84107ecd3ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Calendario"
+              }
+            },
+            "Property": "Mes/Ano"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "22fbdd3c062e6ebb44c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Receitas"
+              }
+            },
+            "Property": "% Lucro"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c6fe2c1f10da01a77da0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_DRE"
+              }
+            },
+            "Property": "Resultado_Financeiro"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
