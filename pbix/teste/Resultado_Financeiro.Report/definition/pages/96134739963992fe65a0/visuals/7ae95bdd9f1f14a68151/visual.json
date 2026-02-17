@@ -4,10 +4,10 @@
   "position": {
     "x": 250.60240963855424,
     "y": 77.108433734939766,
-    "z": 3003,
+    "z": 1000,
     "height": 77.108433734939766,
     "width": 196.62650602409639,
-    "tabOrder": 3003
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "kpi",
@@ -231,48 +231,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "882047f209b1c80ce280",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_DRE"
-              }
-            },
-            "Property": "Receita"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "32b74b8c02b5e26fe053",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

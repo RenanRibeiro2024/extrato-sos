@@ -4,10 +4,10 @@
   "position": {
     "x": 16.706827309236949,
     "y": 168.35341365461849,
-    "z": 3008,
+    "z": 5000,
     "height": 158.07228915662651,
     "width": 223.61445783132532,
-    "tabOrder": 3008
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "ChicletSlicer1448559807354",
@@ -54,108 +54,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "l",
-                    "Entity": "LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "l"
-                                }
-                              },
-                              "Property": "Mês"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'julho'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "HierarchyLevel": {
-                              "Expression": {
-                                "Hierarchy": {
-                                  "Expression": {
-                                    "PropertyVariationSource": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "D_Calendario"
-                                        }
-                                      },
-                                      "Name": "Variation",
-                                      "Property": "Date"
-                                    }
-                                  },
-                                  "Hierarchy": "Hierarquia de datas"
-                                }
-                              },
-                              "Level": "Mês"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'julho'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9"
-                                    }
-                                  },
-                                  "Property": "Mês"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "julho"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
             }
           }
         }
@@ -196,34 +94,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "eb9e4631c1597f7b95d8",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Mês"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

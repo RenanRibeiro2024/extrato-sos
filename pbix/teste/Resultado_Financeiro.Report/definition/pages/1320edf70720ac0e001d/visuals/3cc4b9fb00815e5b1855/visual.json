@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "3cc4b9fb00815e5b1855",
   "position": {
-    "x": 425.79113924050631,
-    "y": 513.41772151898738,
-    "z": 10000,
-    "height": 254.24050632911391,
-    "width": 842.94303797468353,
-    "tabOrder": 10000
+    "x": 425.5408970976253,
+    "y": 471.69744942832011,
+    "z": 7000,
+    "height": 246.54353562005275,
+    "width": 843.20140721196128,
+    "tabOrder": 7000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {
@@ -45,7 +45,7 @@
                   "Property": "Receita"
                 }
               },
-              "queryRef": "Medidas.Receita",
+              "queryRef": "Medidas_DRE.Receita",
               "nativeQueryRef": "Receita"
             },
             {
@@ -56,11 +56,12 @@
                       "Entity": "Medidas_DRE"
                     }
                   },
-                  "Property": "Despesas"
+                  "Property": "Despesas2"
                 }
               },
-              "queryRef": "Medidas.Despesas",
-              "nativeQueryRef": "Despesas"
+              "queryRef": "Medidas_DRE.Despesas2",
+              "nativeQueryRef": "Despesas",
+              "displayName": "Despesas"
             },
             {
               "field": {
@@ -73,9 +74,8 @@
                   "Property": "Resultado_Financeiro"
                 }
               },
-              "queryRef": "Medidas.Resultado_Financeiro",
-              "nativeQueryRef": "Resultado",
-              "displayName": "Resultado"
+              "queryRef": "Medidas_DRE.Resultado_Financeiro",
+              "nativeQueryRef": "Resultado"
             }
           ]
         }
@@ -163,25 +163,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#B50000'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas_DRE.Despesas"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#00C04A'"
+                      "Value": "'#73B88E'"
                     }
                   }
                 }
@@ -198,8 +180,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0258A6'"
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -208,6 +191,25 @@
           },
           "selector": {
             "metadata": "Medidas_DRE.Receita"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_DRE.Despesas2"
           }
         }
       ],
@@ -224,7 +226,21 @@
             "areaShow": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
                 }
               }
             }

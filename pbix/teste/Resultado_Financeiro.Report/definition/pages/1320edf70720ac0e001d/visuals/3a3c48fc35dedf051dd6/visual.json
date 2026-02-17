@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "3a3c48fc35dedf051dd6",
   "position": {
-    "x": 9.8734177215189867,
-    "y": 83.924050632911388,
-    "z": 7000,
-    "height": 99.968354430379748,
-    "width": 178.95569620253164,
-    "tabOrder": 7000
+    "x": 10.131926121372031,
+    "y": 84.432717678100261,
+    "z": 4000,
+    "height": 73.17502198768689,
+    "width": 178.99736147757255,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "ChicletSlicer1448559807354",

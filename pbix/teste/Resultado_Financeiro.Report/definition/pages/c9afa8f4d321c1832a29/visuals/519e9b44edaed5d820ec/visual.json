@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "519e9b44edaed5d820ec",
   "position": {
-    "x": 532.40632982180375,
-    "y": 409.8290585372489,
+    "x": 11.257695690413367,
+    "y": 157.60773966578716,
     "z": 3000,
-    "height": 302.10963831748865,
-    "width": 724.320239408733,
+    "height": 307.33509234828495,
+    "width": 592.15479331574318,
     "tabOrder": 3000
   },
   "visual": {
@@ -43,7 +43,7 @@
               },
               "queryRef": "D_PlanoDeContas.DRE",
               "nativeQueryRef": "DRE",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -164,7 +164,20 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'dez/2024'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -251,7 +264,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'CircleHigh'"
+                            "Value": "'ColoredArrowUpRed'"
                           }
                         }
                       },
@@ -263,7 +276,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'SignLow'"
+                            "Value": "'ColoredArrowDownGreen'"
                           }
                         }
                       }
@@ -313,6 +326,45 @@
               "expr": {
                 "Literal": {
                   "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Variação Mensal (%)'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -574,7 +626,7 @@
         }
       },
       {
-        "name": "0f9fd53edb6654e25a86",
+        "name": "55d90fbacd81d9299d3a",
         "field": {
           "Column": {
             "Expression": {
@@ -588,7 +640,7 @@
         "type": "Categorical"
       },
       {
-        "name": "b3c632843d9028e7fece",
+        "name": "ab6978aaa1968943a836",
         "field": {
           "Measure": {
             "Expression": {
@@ -602,7 +654,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d05e4342dc69aab135de",
+        "name": "874c451193cc4b0d778d",
         "field": {
           "Measure": {
             "Expression": {
@@ -616,7 +668,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0e42d32dc9fea4d27297",
+        "name": "2de748d5ef71b48da914",
         "field": {
           "Measure": {
             "Expression": {

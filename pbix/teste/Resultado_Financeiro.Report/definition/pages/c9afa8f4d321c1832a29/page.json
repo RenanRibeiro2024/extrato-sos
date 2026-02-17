@@ -3,13 +3,8 @@
   "name": "c9afa8f4d321c1832a29",
   "displayName": "Despesas",
   "displayOption": "FitToWidth",
-  "height": 720,
+  "height": 807,
   "width": 1280,
-  "pageBinding": {
-    "name": "21d480c6dbbd582632d5",
-    "type": "Default",
-    "parameters": []
-  },
   "objects": {
     "outspace": [
       {

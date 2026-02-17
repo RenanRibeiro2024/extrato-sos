@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "c08451a64a636cbf1618",
+  "name": "6b5f55273c77c1342777",
   "position": {
-    "x": 8.817451205510908,
-    "y": 10.287026406429392,
-    "z": 3000,
-    "height": 66.130884041331811,
-    "width": 1256.4867967853043,
-    "tabOrder": 3000
+    "x": 16.886543535620053,
+    "y": 10.131926121372031,
+    "z": 5002,
+    "height": 55.1627088830255,
+    "width": 1033.4564643799472,
+    "tabOrder": 5002
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "MAPA DE RECEITAS",
+                    "value": "FINANCEIRO / RH",
                     "textStyle": {
                       "fontFamily": "Calibri",
                       "fontSize": "24pt"

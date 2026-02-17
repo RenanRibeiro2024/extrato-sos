@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "6af80ae32988216e8ae6",
   "position": {
-    "x": 9.8734177215189867,
-    "y": 192.53164556962025,
-    "z": 8000,
-    "height": 207.34177215189874,
-    "width": 178.95569620253164,
-    "tabOrder": 8000
+    "x": 10.131926121372031,
+    "y": 176.74582233948988,
+    "z": 5000,
+    "height": 171.1169744942832,
+    "width": 178.99736147757255,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "ChicletSlicer1448559807354",
@@ -17,17 +17,28 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "D_Calendario"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "D_Calendario"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "Mes/Ano"
+                  "Level": "Mês"
                 }
               },
-              "queryRef": "D_Calendario.Mes/Ano",
-              "nativeQueryRef": "Mes/Ano"
+              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "Date Mês"
             }
           ]
         }
@@ -40,7 +51,7 @@
             "columns": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "3D"
                 }
               }
             },
@@ -218,6 +229,7 @@
             }
           ]
         },
+        "howCreated": "User",
         "objects": {
           "general": [
             {

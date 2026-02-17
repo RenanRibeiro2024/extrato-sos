@@ -4,10 +4,10 @@
   "position": {
     "x": 457.51004016064257,
     "y": 77.108433734939766,
-    "z": 3002,
+    "z": 0,
     "height": 249.31726907630522,
     "width": 810.92369477911654,
-    "tabOrder": 3002
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -187,65 +187,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dcb9440fba8a8912f7f9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "D_Funcionarios"
-              }
-            },
-            "Property": "Cargo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8ee07863f4eb3c934993",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "D_Funcionarios"
-              }
-            },
-            "Property": "Funcionario"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "248cbbc242ca9fd6e782",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "D_Funcionarios"
-              }
-            },
-            "Property": "Custo_Diario_Funcionario"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "db1fda56dee214963157",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Func"
-              }
-            },
-            "Property": "Salario Mensal (Dias Uteis)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

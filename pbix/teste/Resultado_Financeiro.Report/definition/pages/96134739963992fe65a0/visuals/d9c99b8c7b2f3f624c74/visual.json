@@ -4,10 +4,10 @@
   "position": {
     "x": 250.60240963855424,
     "y": 168.35341365461849,
-    "z": 3005,
+    "z": 2000,
     "height": 77.108433734939766,
     "width": 196.62650602409639,
-    "tabOrder": 3005
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "kpi",
@@ -231,48 +231,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7bb25e07b04019bd49b7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Func"
-              }
-            },
-            "Property": "Salario Mensal (Dias Uteis)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "810a93465a2ab52516b7",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

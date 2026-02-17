@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "2b13498deadd023a4daf",
   "position": {
-    "x": 438.46153846153845,
-    "y": 81.92307692307692,
-    "z": 8000,
-    "height": 625.38461538461536,
-    "width": 827.30769230769226,
-    "tabOrder": 8000
+    "x": 444.67897977132804,
+    "y": 82.181178540017584,
+    "z": 5000,
+    "height": 591.0290237467018,
+    "width": 820.68601583113457,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -247,7 +247,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "170.35883988746187D"
+                  "Value": "188.33480670948643D"
                 }
               }
             }
@@ -637,48 +637,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "9e2e6f9d3f6dae8322c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "F_Movimentacoes"
-              }
-            },
-            "Property": "Produto"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a0c843f312aa8465ffed",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "F_Movimentacoes"
-              }
-            },
-            "Property": "Nome_Operacao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "64cf9199019d4a672727",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Receitas"
-              }
-            },
-            "Property": "frequencia_absoluta_produtos"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

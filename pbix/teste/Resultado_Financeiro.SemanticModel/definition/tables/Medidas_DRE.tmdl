@@ -163,6 +163,14 @@ table Medidas_DRE
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Despesas2 = ```
+			
+			    ([Impostos] + [Despesas_Operacionais] + [Despesas_Operacionais_Gerais] + [Despesas administrativas] + [Investimentos] + [Despesas_Extras]) * -1
+			```
+		lineageTag: 968f3a3f-127c-4c59-980b-c2959e17145f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Cliente
 		formatString: 0
 		lineageTag: fb6c915b-28f0-42a7-b9f1-f970b9bce361

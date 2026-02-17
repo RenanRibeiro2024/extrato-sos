@@ -4,10 +4,10 @@
   "position": {
     "x": 16.706827309236949,
     "y": 345.70281124497996,
-    "z": 3006,
+    "z": 3000,
     "height": 120.80321285140563,
     "width": 223.61445783132532,
-    "tabOrder": 3006
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "kpi",
@@ -202,53 +202,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9f36f561bbcb6b28d358",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b46c03939415cfe5e8d1",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "D_Funcionarios"
-                  }
-                },
-                "Property": "Custo_Diario_Funcionario"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

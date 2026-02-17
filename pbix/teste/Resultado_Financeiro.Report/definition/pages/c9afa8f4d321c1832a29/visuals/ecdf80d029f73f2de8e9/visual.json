@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ecdf80d029f73f2de8e9",
   "position": {
-    "x": 293.01204819277109,
-    "y": 75.823293172690768,
+    "x": 230.78276165347404,
+    "y": 75.426561125769567,
     "z": 4000,
-    "height": 104.09638554216868,
-    "width": 219.75903614457832,
+    "height": 70.923482849604227,
+    "width": 220.650835532102,
     "tabOrder": 4000
   },
   "visual": {
@@ -134,7 +134,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Despesa'"
+                  "Value": "'Despesa Total'"
                 }
               }
             },
@@ -149,9 +149,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.25
+                    "Literal": {
+                      "Value": "'#0D6ABF'"
                     }
                   }
                 }
@@ -166,14 +165,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "5D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "10D"
                 }
               }
             }
@@ -182,48 +181,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f052f4caa487eaf0aa6b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Despesas"
-              }
-            },
-            "Property": "Despesa2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b5812075ecd4da73c146",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

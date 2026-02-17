@@ -4,10 +4,10 @@
   "position": {
     "x": 16.706827309236949,
     "y": 77.108433734939766,
-    "z": 3007,
+    "z": 4000,
     "height": 70.682730923694777,
     "width": 223.61445783132532,
-    "tabOrder": 3007
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "ChicletSlicer1448559807354",
@@ -114,7 +114,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2025L"
+                                "Value": "2024L"
                               }
                             }
                           ]
@@ -153,7 +153,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "2025L"
+                                      "Value": "2024L"
                                     }
                                   }
                                 ]
@@ -177,7 +177,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "2025"
+                            "0": "2024"
                           }
                         ]
                       }
@@ -232,34 +232,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cae785c4905af5b5586d",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "D_Calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
