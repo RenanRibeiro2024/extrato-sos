@@ -4,7 +4,7 @@
   "position": {
     "x": 457.51004016064257,
     "y": 77.108433734939766,
-    "z": 0,
+    "z": 1000,
     "height": 249.31726907630522,
     "width": 810.92369477911654,
     "tabOrder": 0
@@ -51,11 +51,26 @@
                       "Entity": "D_Funcionarios"
                     }
                   },
+                  "Property": "Idade"
+                }
+              },
+              "queryRef": "D_Funcionarios.Idade",
+              "nativeQueryRef": "Idade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_Funcionarios"
+                    }
+                  },
                   "Property": "Custo_Diario_Funcionario"
                 }
               },
               "queryRef": "D_Funcionarios.Custo_Diario_Funcionario",
-              "nativeQueryRef": "Custo_Diario_Funcionario"
+              "nativeQueryRef": "Custo Diário Funcionário",
+              "displayName": "Custo Diário Funcionário"
             },
             {
               "field": {
@@ -65,11 +80,12 @@
                       "Entity": "Medidas_Func"
                     }
                   },
-                  "Property": "Salario Mensal (Dias Uteis)"
+                  "Property": "Salario Mensal (Dias Uteis)2"
                 }
               },
-              "queryRef": "Medidas_Func.Salario Mensal (Dias Uteis)",
-              "nativeQueryRef": "Salario Mensal (Dias Uteis)"
+              "queryRef": "Medidas_Func.Salario Mensal (Dias Uteis)2",
+              "nativeQueryRef": "Salario Mensal",
+              "displayName": "Salario Mensal"
             }
           ]
         }
@@ -78,13 +94,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "D_Funcionarios"
+                    "Entity": "Medidas_Func"
                   }
                 },
-                "Property": "Custo_Diario_Funcionario"
+                "Property": "Salario Mensal (Dias Uteis)2"
               }
             },
             "direction": "Descending"
@@ -99,7 +115,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "128.61539959737027D"
+                  "Value": "122.62893753308903D"
                 }
               }
             }
@@ -113,7 +129,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "138.230764036077D"
+                  "Value": "125.11722669022923D"
                 }
               }
             }
@@ -127,7 +143,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "159.61510907162562D"
+                  "Value": "167.99377375116478D"
                 }
               }
             }
@@ -141,13 +157,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "185.23076637954728D"
+                  "Value": "185.4776261139098D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medidas_Func.Salario Mensal (Dias Uteis)"
+            "metadata": "Medidas_Func.Salario Mensal (Dias Uteis)2"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.90453088347596D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "D_Funcionarios.Idade"
           }
         }
       ]
@@ -179,6 +209,53 @@
               "expr": {
                 "Literal": {
                   "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Distribuição Salarial Por Função'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }

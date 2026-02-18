@@ -21,6 +21,7 @@
                   {
                     "value": "DRE - MERCADO SUPER",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Calibri",
                       "fontSize": "24pt"
                     }

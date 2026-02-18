@@ -21,6 +21,7 @@
                   {
                     "value": "MAPA DE RECEITAS",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Calibri",
                       "fontSize": "24pt"
                     }

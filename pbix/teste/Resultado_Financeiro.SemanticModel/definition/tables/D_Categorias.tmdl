@@ -25,6 +25,14 @@ table D_Categorias
 
 		annotation SummarizationSetBy = Automatic
 
+	column Categoria_FC
+		dataType: string
+		lineageTag: b9e12fee-0364-4f9e-940d-88c0a74a7221
+		summarizeBy: none
+		sourceColumn: Categoria_FC
+
+		annotation SummarizationSetBy = Automatic
+
 	partition D_Categorias = m
 		mode: import
 		source =
@@ -37,9 +45,10 @@ table D_Categorias
 				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Coluna Condicional Adicionada",{"Nome da Origem", "Data", "Ano", "Mês", "Funcionario", "Cargo", "Custo Diário Funcionário", "Tipo Operação", "Produto", "Categoria Produto", "Categoria_DRE", "Quantidade", "Preço Unitário", "Valor Total", "Impostos", "Custo", "Cliente", "Fornecedor"}),
 				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Reordenadas",{{"Nome da Origem", "Nome_Origem"}, {"Mês", "Mes"}, {"Custo Diário Funcionário", "Custo_Diario_Funcionario"}, {"Tipo Operação", "Tipo_Operacao"}, {"Categoria Produto", "Categoria_Produto"}, {"Preço Unitário", "Preco_Unitario"}, {"Valor Total", "Valor_Total"}}),
 				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Colunas Renomeadas",{"Tipo_Operacao", "Categoria_Produto", "Categoria_DRE"}),
-				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"Categoria_DRE"})
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"Categoria_DRE"}),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Duplicatas Removidas", "Categoria_FC", each if [Categoria_DRE] = "(-) DESPESAS EXTRAS" then "FINANCIAMENTO" else if [Categoria_DRE] = "(-) INVESTIMENTOS" then "INVESTIMENTO" else if [Categoria_DRE] = "(-) DESPESAS ADMINISTRATIVAS" then "OPERACIONAL" else if [Categoria_DRE] = "(-) DESPESA OPERACIONAL" then "OPERACIONAL" else if [Categoria_DRE] = "(-) DESPESAS OPERACIONAIS GERAIS" then "OPERACIONAL" else if [Categoria_DRE] = "(+) FATURAMENTO BRUTO" then "OPERACIONAL" else null)
 				in
-				    #"Duplicatas Removidas"
+				    #"Coluna Condicional Adicionada1"
 
 	annotation PBI_NavigationStepName = Navegação
 

@@ -67,6 +67,15 @@ table Medidas_Receitas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Venda =
+			
+			VAR preco_unitario = CALCULATE(SUM(F_Movimentacoes[Preco_Unitario]))
+			VAR quantidade = CALCULATE(COUNT(F_Movimentacoes[Quantidade]))
+			RETURN preco_unitario * quantidade
+		lineageTag: be217a3a-cb2a-4769-80ff-1cc5c15ab54a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		formatString: 0
 		lineageTag: ee78395e-96b8-44bd-9f16-adc1f533c449

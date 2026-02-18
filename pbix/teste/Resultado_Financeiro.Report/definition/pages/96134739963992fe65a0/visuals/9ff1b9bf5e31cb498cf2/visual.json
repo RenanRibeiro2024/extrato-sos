@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "d9c99b8c7b2f3f624c74",
+  "name": "9ff1b9bf5e31cb498cf2",
   "position": {
-    "x": 262.68656716417911,
-    "y": 77.611940298507463,
-    "z": 2000,
-    "height": 177.91044776119404,
-    "width": 170.74626865671641,
-    "tabOrder": 2000
+    "x": 150.44776119402985,
+    "y": 648.35820895522386,
+    "z": 8000,
+    "height": 47.761194029850742,
+    "width": 63.28358208955224,
+    "tabOrder": 5005
   },
   "visual": {
     "visualType": "kpi",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas_Func"
                     }
                   },
-                  "Property": "Salario Mensal (Dias Uteis)2"
+                  "Property": "Contagem_Mulheres"
                 }
               },
-              "queryRef": "Medidas_Func.Salario Mensal (Dias Uteis)2",
-              "nativeQueryRef": "Salario Mensal (Dias Uteis)2"
+              "queryRef": "Medidas_Func.Contagem_Mulheres",
+              "nativeQueryRef": "Contagem_Mulheres"
             }
           ]
         },
@@ -105,6 +105,17 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#ED0093'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -117,7 +128,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -156,7 +167,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Folha de Pagamento'"
+                  "Value": "'Funcionários Ativos'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             },
@@ -189,26 +207,6 @@
           }
         }
       ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "padding": [
         {
           "properties": {
@@ -223,6 +221,26 @@
               "expr": {
                 "Literal": {
                   "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

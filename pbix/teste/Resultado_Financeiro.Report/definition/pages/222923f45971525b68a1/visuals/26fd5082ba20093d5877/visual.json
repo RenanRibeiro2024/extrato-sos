@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e0f70fc6f576ffbabd0f",
+  "name": "26fd5082ba20093d5877",
   "position": {
-    "x": 16.706827309236949,
-    "y": 168.35341365461849,
-    "z": 13000,
-    "height": 158.07228915662651,
-    "width": 223.61445783132532,
-    "tabOrder": 5000
+    "x": 0,
+    "y": 203.05220883534139,
+    "z": 2,
+    "height": 173.49397590361446,
+    "width": 192.77108433734941,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "ChicletSlicer1448559807354",
@@ -59,40 +59,35 @@
         }
       ]
     },
-    "visualContainerObjects": {
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "15D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4ed78d49eeec3f37b46b",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "D_Calendario"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hierarquia de datas"
+              }
+            },
+            "Level": "Mês"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

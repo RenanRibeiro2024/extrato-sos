@@ -29,6 +29,23 @@ table D_Funcionarios
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Genero
+		dataType: string
+		lineageTag: f13ddbdb-d86c-4dc1-856f-0baaedebd66a
+		summarizeBy: none
+		sourceColumn: Genero
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idade
+		dataType: double
+		formatString: 0
+		lineageTag: b70e9406-ee7e-4f92-90c0-d174d70d2114
+		summarizeBy: none
+		sourceColumn: Idade
+
+		annotation SummarizationSetBy = Automatic
+
 	partition D_Funcionarios = m
 		mode: import
 		source =
@@ -41,9 +58,11 @@ table D_Funcionarios
 				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Coluna Condicional Adicionada",{"Nome da Origem", "Data", "Ano", "Mês", "Funcionario", "Cargo", "Custo Diário Funcionário", "Tipo Operação", "Produto", "Categoria Produto", "Categoria_DRE", "Quantidade", "Preço Unitário", "Valor Total", "Impostos", "Custo", "Cliente", "Fornecedor"}),
 				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Reordenadas",{{"Nome da Origem", "Nome_Origem"}, {"Mês", "Mes"}, {"Custo Diário Funcionário", "Custo_Diario_Funcionario"}, {"Tipo Operação", "Tipo_Operacao"}, {"Categoria Produto", "Categoria_Produto"}, {"Preço Unitário", "Preco_Unitario"}, {"Valor Total", "Valor_Total"}}),
 				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Colunas Renomeadas",{"Funcionario", "Cargo", "Custo_Diario_Funcionario"}),
-				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"Funcionario"})
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"Funcionario"}),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Duplicatas Removidas", "Genero", each if [Funcionario] = "Eduardo Nunes" then "M" else if [Funcionario] = "José Andrade" then "M" else if [Funcionario] = "Pedro Lima" then "M" else "F", type text),
+				    #"Coluna Condicional Adicionada2" = Table.AddColumn(#"Coluna Condicional Adicionada1", "Idade", each if [Funcionario] = "Eduardo Nunes" then 34 else if [Funcionario] = "Marina Paiva" then 19 else if [Funcionario] = "José Andrade" then 22 else if [Funcionario] = "Lívia Porto" then 30 else if [Funcionario] = "Pedro Lima" then 41 else if [Funcionario] = "Carla Souza" then 26 else if [Funcionario] = "Amanda Rocha" then 45 else null, type number)
 				in
-				    #"Duplicatas Removidas"
+				    #"Coluna Condicional Adicionada2"
 
 	annotation PBI_NavigationStepName = Navegação
 

@@ -36,6 +36,7 @@ table D_PlanoDeContas
 				    "Indice", STRING,
 				    "Cor", STRING,
 				    {
+				        {"SALDO INICIAL", 0, 0},
 				        {"(+) FATURAMENTO BRUTO", 1, 2},
 				        {"(-) IMPOSTOS", 2, 0},
 				        {"(=) FATURAMENTO LIQUIDO", 3, 1},
@@ -51,7 +52,9 @@ table D_PlanoDeContas
 				        {"(=) RESULTADO FINANCEIRO", 18, 1},
 				        {"(+) RECEBIMENTO EXTRA-OPERACIONAL", 19, 0},
 				        {"(-) RETIRADA DE DIVIDENDOS", 20, 0},
-				        {"(=) RESULTADO LÍQUIDO", 21, 1}
+				        {"(=) RESULTADO LÍQUIDO", 21, 1},
+				        {"SALDO FINAL", 22, 0},
+				        {"SALDO ACUMULADO", 23, 0}
 				    }
 				)
 

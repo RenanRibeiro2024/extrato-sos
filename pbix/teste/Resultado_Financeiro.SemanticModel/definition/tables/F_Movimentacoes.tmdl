@@ -39,12 +39,16 @@ table F_Movimentacoes
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Preco_Unitario
-		dataType: string
+		dataType: double
 		lineageTag: 8e4769cc-31e7-4519-b348-6dd1113f1347
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Preco_Unitario
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Valor_Total
 		dataType: double

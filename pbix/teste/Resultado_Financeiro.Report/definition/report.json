@@ -53,6 +53,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Screenshot_1007175834063061426.png",
+          "path": "Screenshot_1007175834063061426.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

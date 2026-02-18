@@ -19,6 +19,51 @@ table Medidas_Func
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Salario Mensal (Dias Uteis)2' = ```
+			
+			VAR DiasUteis =
+			    CALCULATE (
+			        COUNTROWS ( D_Calendario ),
+			        FILTER (
+			            D_Calendario,
+			            WEEKDAY ( D_Calendario[Date], 2 ) <= 5
+			        )
+			    )
+			RETURN
+			    (SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) + DiasUteis)
+			
+			```
+		lineageTag: d6a503e2-03ad-471f-b7a4-23f43914d31c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Contagem_Homens = CALCULATE(COUNT(D_Funcionarios[Genero]), D_Funcionarios[Genero] = "M")
+		formatString: 0
+		lineageTag: c2ead807-5935-43d1-96af-74c19a1f67c9
+
+	measure Contagem_Mulheres = CALCULATE(COUNT(D_Funcionarios[Genero]), D_Funcionarios[Genero] = "F")
+		formatString: 0
+		lineageTag: a746ce68-4a92-4c6c-a5b1-728a08358c4e
+
+	measure Media_salario =
+			
+			DIVIDE([Salario Mensal (Dias Uteis)2], [Func_Ativos], 0)
+		lineageTag: f3066deb-a55f-48cd-9469-4d2222be62aa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Func_Ativos =
+			
+			SUMX(Medidas_Func, [Contagem_Homens] + [Contagem_Mulheres])
+		formatString: 0
+		lineageTag: d79a1bbf-534f-44ef-b00f-05b4a0f2c2a2
+
+	measure Media_idade =
+			
+			AVERAGE(D_Funcionarios[Idade])
+		formatString: 0
+		lineageTag: 67031cd4-93bb-478a-91dd-bfcbaa66e200
+
 	column Column
 		formatString: 0
 		lineageTag: 6795a443-a361-4f89-96ed-e00131af76ce

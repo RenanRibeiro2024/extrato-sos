@@ -50,14 +50,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_Receitas"
+                      "Entity": "Medidas_DRE"
                     }
                   },
-                  "Property": "% Lucro"
+                  "Property": "Resultado_Financeiro"
                 }
               },
-              "queryRef": "Medidas_Receitas.% Lucro",
-              "nativeQueryRef": "% Lucro"
+              "queryRef": "Medidas_DRE.Resultado_Financeiro",
+              "nativeQueryRef": "Resultado Financeiro",
+              "displayName": "Resultado Financeiro"
             }
           ]
         },
@@ -68,14 +69,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_DRE"
+                      "Entity": "Medidas_Receitas"
                     }
                   },
-                  "Property": "Resultado_Financeiro"
+                  "Property": "% Lucro"
                 }
               },
-              "queryRef": "Medidas_DRE.Resultado_Financeiro",
-              "nativeQueryRef": "Resultado_Financeiro"
+              "queryRef": "Medidas_Receitas.% Lucro",
+              "nativeQueryRef": "% Lucro"
             }
           ]
         }
@@ -208,6 +209,46 @@
                 }
               }
             ]
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "32L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelOrientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            }
           }
         }
       ]

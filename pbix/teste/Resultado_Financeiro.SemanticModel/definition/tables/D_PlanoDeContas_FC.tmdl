@@ -1,0 +1,47 @@
+table D_PlanoDeContas_FC
+	lineageTag: 30f8746a-c40e-4ec3-a51c-2e20ae0ba260
+
+	column FC
+		lineageTag: 6184f858-57d8-442f-b4a8-3db809b671d5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FC]
+		sortByColumn: Indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice
+		lineageTag: 1e7b92c9-2bf6-4ce6-b887-1c48640056ed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Indice]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cor
+		lineageTag: 46cbd548-885c-4163-b05a-eb886485c5d8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Cor]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_PlanoDeContas_FC = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "FC", STRING,
+				    "Indice", STRING,
+				    "Cor", STRING,
+				    {
+				        {"SALDO INICIAL", 0, 2},
+				        {"OPERACIONAL", 1, 0},
+				        {"INVESTIMENTO", 2, 0},
+				        {"FINANCIAMENTO", 3, },
+				        {"SALDO FINAL", 4, 1},
+				        {"SALDO ACUMULADO", 5, 0}
+				    }
+				)
+
+	annotation PBI_Id = db2c2dcd68c14bd4922a1eed1001a40e
+

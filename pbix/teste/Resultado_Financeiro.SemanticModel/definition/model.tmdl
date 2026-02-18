@@ -25,6 +25,8 @@ ref table LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9
 ref table Medidas_Receitas
 ref table Medidas_Despesas
 ref table Medidas_Func
+ref table Medidas_FC
+ref table D_PlanoDeContas_FC
 
 ref cultureInfo pt-BR
 

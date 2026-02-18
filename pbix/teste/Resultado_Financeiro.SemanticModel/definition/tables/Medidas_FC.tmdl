@@ -1,0 +1,128 @@
+table Medidas_FC
+	lineageTag: e6cbc0b2-a074-49e3-936e-a163d8f8d66f
+
+	measure Valor_FC = ```
+			
+			VAR Cod = SELECTEDVALUE(D_PlanoDeContas_FC[FC])
+			
+			RETURN 
+			    CALCULATE(
+			        IF(cod = "SALDO INICIAL" && NOT(ISINSCOPE(D_Categorias[Categoria_FC])),[saldo Inicial], 
+			        IF(cod = "OPERACIONAL", [FC Operacional],
+			        IF(cod = "INVESTIMENTO",[FC Investimentos],
+			        IF(cod = "FINANCIAMENTO", [FC Financiamentos],
+			        IF(cod = "SALDO FINAL"  && NOT(ISINSCOPE(D_Categorias[Categoria_FC])),CALCULATE([FC Saldo Final], ALL('D_PlanoDeContas_FC')),
+			        IF(cod = "SALDO ACUMULADO"  && NOT(ISINSCOPE(D_Categorias[Categoria_FC])), [V Acumulado],BLANK())))))))
+			```
+		lineageTag: 7b2cc74b-1a47-4029-b151-5822d4d6419b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'saldo Inicial' = ```
+			
+			var saldo = CALCULATE([V Acumulado],all(D_PlanoDeContas_FC), PREVIOUSMONTH(D_Calendario[Date]))
+			RETURN 
+			    IF(saldo = BLANK() && NOT(ISINSCOPE(D_Categorias[Tipo_Operacao])), 0, saldo)
+			```
+		lineageTag: 26fcf171-61ec-4b90-b2d1-4ea1c8a14230
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FC Saldo Final' = ```
+			
+			CALCULATE([Receita] - [Despesas_FC], D_Categorias[Categoria_FC] <> BLANK())
+			
+			
+			```
+		lineageTag: aa309e3d-89a5-407e-84ba-b9d0de3cc8ce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'V Acumulado' = ```
+			
+			VAR Data = MAX(D_Calendario[Date])
+			VAR Ano = MAX(D_Calendario[Ano])
+			    
+			VAR MercadoSuper= 
+			CALCULATE(Medidas_FC[FC Saldo Final], ALL('D_PlanoDeContas_FC'),
+			    FILTER(
+			        ALL(F_Movimentacoes),
+			            'F_Movimentacoes'[Data] <= Data && YEAR(F_Movimentacoes[Data]) <= Ano
+			    )
+			)
+			
+			RETURN
+			MercadoSuper
+			```
+		lineageTag: 1fe561f9-d293-4c41-826f-697ec148fe7e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FC Operacional' = ```
+			
+			var receita = CALCULATE([Receita], 
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "OPERACIONAL"))
+			
+			var despesa = CALCULATE([Despesas_FC],
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "OPERACIONAL"))
+			
+			RETURN receita - despesa
+			```
+		lineageTag: e7fb67f9-b0f9-4dfa-810c-3fc115962df6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FC Investimentos' =
+			
+			var Receita = CALCULATE([Receita],
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "INVESTIMENTO"))
+			
+			var Despesa = CALCULATE([Despesas_FC],
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "INVESTIMENTO"))
+			
+			RETURN Receita - Despesa
+		lineageTag: 1500ffa8-0b55-4d0d-b261-8482af401fba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FC Financiamentos' = ```
+			
+			var Receita = CALCULATE([Receita],
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "FINANCIAMENTO"))
+			
+			var Despesa = CALCULATE([Despesas_FC],
+			    FILTER(D_Categorias, D_Categorias[Categoria_FC] = "FINANCIAMENTO"))
+			
+			RETURN 
+			
+			Receita - Despesa
+			```
+		lineageTag: 5991499b-b0a3-45f8-adc0-e96d571f3375
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Despesas_FC = ```
+			
+			    ([Impostos] + [Despesas_Operacionais] + [Despesas_Operacionais_Gerais] + [Despesas administrativas] + [Investimentos] + [Despesas_Extras]) *-1
+			```
+		lineageTag: a4123fd1-ea9e-4956-88e2-f119005b05d7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: e5f00b73-097b-4143-bb8e-305daebbd6af
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas_FC = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 0a257440f9904db39ffd391f05897df6
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

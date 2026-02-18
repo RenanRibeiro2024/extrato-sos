@@ -4,7 +4,7 @@
   "position": {
     "x": 16.886543535620053,
     "y": 10.131926121372031,
-    "z": 5002,
+    "z": 5000,
     "height": 55.1627088830255,
     "width": 1033.4564643799472,
     "tabOrder": 5002
@@ -19,8 +19,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "FINANCEIRO / RH",
+                    "value": "VISÃO GERAL - RH",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Calibri",
                       "fontSize": "24pt"
                     }

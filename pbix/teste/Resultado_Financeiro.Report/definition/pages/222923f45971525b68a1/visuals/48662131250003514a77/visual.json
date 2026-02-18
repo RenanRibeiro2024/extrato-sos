@@ -1,0 +1,251 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "48662131250003514a77",
+  "position": {
+    "x": 215.76923076923077,
+    "y": 124.61538461538461,
+    "z": 0,
+    "height": 525,
+    "width": 1002.6923076923076,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_Calendario"
+                    }
+                  },
+                  "Property": "Mes/Ano"
+                }
+              },
+              "queryRef": "D_Calendario.Mes/Ano",
+              "nativeQueryRef": "Mes/Ano",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_PlanoDeContas_FC"
+                    }
+                  },
+                  "Property": "FC"
+                }
+              },
+              "queryRef": "D_PlanoDeContas_FC.FC",
+              "nativeQueryRef": "FC",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_Categorias"
+                    }
+                  },
+                  "Property": "Tipo_Operacao"
+                }
+              },
+              "queryRef": "D_Categorias.Tipo_Operacao",
+              "nativeQueryRef": "Tipo_Operacao",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_FC"
+                    }
+                  },
+                  "Property": "Valor_FC"
+                }
+              },
+              "queryRef": "Medidas_FC.Valor_FC",
+              "nativeQueryRef": "Valor_FC"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "D_PlanoDeContas_FC.FC"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_PlanoDeContas_FC"
+                    }
+                  },
+                  "Property": "FC"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "D_Categorias.Tipo_Operacao"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cde23300721deeb22856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Calendario"
+              }
+            },
+            "Property": "Mes/Ano"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0511e246d8fbeae9d99b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_FC"
+              }
+            },
+            "Property": "Valor_FC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b4743e4075ea63604f48",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_PlanoDeContas_FC"
+              }
+            },
+            "Property": "FC"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "330b29071ea8c252369e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Categorias"
+              }
+            },
+            "Property": "Tipo_Operacao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bdff73212270b52f8325",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Calendario"
+              }
+            },
+            "Property": "Ano"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "D_Calendario",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "2023L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

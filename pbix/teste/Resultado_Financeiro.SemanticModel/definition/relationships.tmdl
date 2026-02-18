@@ -27,3 +27,7 @@ relationship b4317def-e012-335b-305d-e8614faa97b0
 	fromColumn: D_Categorias.Categoria_DRE
 	toColumn: D_PlanoDeContas.DRE
 
+relationship 7a7b09eb-d18d-8b10-da7e-7368c1745ae5
+	fromColumn: D_Categorias.Categoria_FC
+	toColumn: D_PlanoDeContas_FC.FC
+

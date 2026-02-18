@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "7ae95bdd9f1f14a68151",
+  "name": "7105b86f2f2de933945a",
   "position": {
-    "x": 250.60240963855424,
-    "y": 77.108433734939766,
-    "z": 1000,
-    "height": 77.108433734939766,
-    "width": 196.62650602409639,
-    "tabOrder": 1000
+    "x": 32.238805970149251,
+    "y": 642.38805970149247,
+    "z": 7000,
+    "height": 58.507462686567166,
+    "width": 81.194029850746261,
+    "tabOrder": 5004
   },
   "visual": {
     "visualType": "kpi",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_DRE"
+                      "Entity": "Medidas_Func"
                     }
                   },
-                  "Property": "Receita"
+                  "Property": "Contagem_Homens"
                 }
               },
-              "queryRef": "Medidas_DRE.Receita",
-              "nativeQueryRef": "Receita"
+              "queryRef": "Medidas_Func.Contagem_Homens",
+              "nativeQueryRef": "Contagem_Homens"
             }
           ]
         },
@@ -105,6 +105,17 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#66A1D8'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -117,7 +128,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -153,6 +164,20 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Funcionários Ativos'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -178,11 +203,24 @@
                   "Value": "'center'"
                 }
               }
-            },
-            "text": {
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
               "expr": {
                 "Literal": {
-                  "Value": "'Receita'"
+                  "Value": "20D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
                 }
               }
             }
@@ -195,7 +233,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -203,26 +241,6 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
                 }
               }
             }

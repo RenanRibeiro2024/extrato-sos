@@ -1,108 +1,44 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "d9c99b8c7b2f3f624c74",
+  "name": "f41d20d4006802333a0b",
   "position": {
-    "x": 262.68656716417911,
-    "y": 77.611940298507463,
-    "z": 2000,
+    "x": 42.985074626865668,
+    "y": 522.98507462686564,
+    "z": 0,
     "height": 177.91044776119404,
     "width": 170.74626865671641,
-    "tabOrder": 2000
+    "tabOrder": 5006
   },
   "visual": {
-    "visualType": "kpi",
-    "query": {
-      "queryState": {
-        "Indicator": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Func"
-                    }
-                  },
-                  "Property": "Salario Mensal (Dias Uteis)2"
-                }
-              },
-              "queryRef": "Medidas_Func.Salario Mensal (Dias Uteis)2",
-              "nativeQueryRef": "Salario Mensal (Dias Uteis)2"
-            }
-          ]
-        },
-        "TrendLine": {
-          "projections": [
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "D_Calendario"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
-                    }
-                  },
-                  "Level": "Ano"
-                }
-              },
-              "queryRef": "D_Calendario.Date.Variation.Hierarquia de datas.Ano",
-              "nativeQueryRef": "Date Ano"
-            }
-          ]
-        }
-      }
-    },
+    "visualType": "image",
     "objects": {
-      "trendline": [
+      "image": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "goals": [
-        {
-          "properties": {
-            "showGoal": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "indicator": [
-        {
-          "properties": {
-            "indicatorDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "showIcon": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+            "sourceFile": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Screenshot_10.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "Screenshot_1007175834063061426.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
                 }
               }
             }
@@ -153,13 +89,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Folha de Pagamento'"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {

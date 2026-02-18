@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "d9c99b8c7b2f3f624c74",
+  "name": "2c45c16e5c244033b738",
   "position": {
     "x": 262.68656716417911,
-    "y": 77.611940298507463,
-    "z": 2000,
+    "y": 293.73134328358208,
+    "z": 11000,
     "height": 177.91044776119404,
     "width": 170.74626865671641,
-    "tabOrder": 2000
+    "tabOrder": 5008
   },
   "visual": {
     "visualType": "kpi",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas_Func"
                     }
                   },
-                  "Property": "Salario Mensal (Dias Uteis)2"
+                  "Property": "Media_salario"
                 }
               },
-              "queryRef": "Medidas_Func.Salario Mensal (Dias Uteis)2",
-              "nativeQueryRef": "Salario Mensal (Dias Uteis)2"
+              "queryRef": "Medidas_Func.Media_salario",
+              "nativeQueryRef": "Media_salario"
             }
           ]
         },
@@ -153,13 +153,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Folha de Pagamento'"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -183,6 +176,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Média Salarial'"
                 }
               }
             }

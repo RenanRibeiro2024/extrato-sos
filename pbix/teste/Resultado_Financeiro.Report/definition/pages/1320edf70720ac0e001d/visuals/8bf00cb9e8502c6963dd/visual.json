@@ -511,5 +511,107 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7fa026d89c185421a6d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Calendario"
+              }
+            },
+            "Property": "Mes/Ano"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "422037abd07bb2838541",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_PlanoDeContas"
+              }
+            },
+            "Property": "DRE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0f25138ba79dafe2681e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Nome_Operacao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dc4c4738977f5c381ef3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "F_Movimentacoes"
+              }
+            },
+            "Property": "Produto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6c3b3ab17c1e2d45b254",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "D_Calendario"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "56cc400162e7a8a3bb9f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_DRE"
+              }
+            },
+            "Property": "Valor_DRE"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "645a0cd90431342e4b9e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_DRE"
+              }
+            },
+            "Property": "% DRE"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

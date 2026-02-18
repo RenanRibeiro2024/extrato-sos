@@ -171,6 +171,18 @@
               "F_Movimentacoes.Produto"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F_Movimentacoes"
+                    }
+                  },
+                  "Property": "Produto"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -247,7 +259,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "188.33480670948643D"
+                  "Value": "175.22336387701858D"
                 }
               }
             }

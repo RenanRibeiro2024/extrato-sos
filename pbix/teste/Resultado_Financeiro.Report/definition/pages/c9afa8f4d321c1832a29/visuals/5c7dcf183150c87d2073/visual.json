@@ -21,6 +21,7 @@
                   {
                     "value": "MAPA DE DESPESAS",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Calibri",
                       "fontSize": "24pt"
                     }
