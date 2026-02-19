@@ -158,7 +158,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Mês Atual x Mês Anterior'"
+                  "Value": "'MÊS ATUAL X MÊS ANTERIOR'"
                 }
               }
             },

@@ -34,12 +34,12 @@ table D_PlanoDeContas_FC
 				    "Indice", STRING,
 				    "Cor", STRING,
 				    {
-				        {"SALDO INICIAL", 0, 2},
+				        {"SALDO INICIAL", 0, 0},
 				        {"OPERACIONAL", 1, 0},
 				        {"INVESTIMENTO", 2, 0},
-				        {"FINANCIAMENTO", 3, },
-				        {"SALDO FINAL", 4, 1},
-				        {"SALDO ACUMULADO", 5, 0}
+				        {"FINANCIAMENTO", 3, 0},
+				        {"SALDO FINAL", 4, 0},
+				        {"SALDO ACUMULADO", 5, 1}
 				    }
 				)
 

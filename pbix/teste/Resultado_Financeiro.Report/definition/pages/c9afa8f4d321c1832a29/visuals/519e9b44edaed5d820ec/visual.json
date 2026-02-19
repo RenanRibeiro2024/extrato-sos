@@ -345,7 +345,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Variação Mensal (%)'"
+                  "Value": "'VARIAÇÃO MENSAL %'"
                 }
               }
             },
@@ -624,62 +624,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "55d90fbacd81d9299d3a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "F_Movimentacoes"
-              }
-            },
-            "Property": "Nome_Operacao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ab6978aaa1968943a836",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Despesas"
-              }
-            },
-            "Property": "Despesas Mês Anterior"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "874c451193cc4b0d778d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Despesas"
-              }
-            },
-            "Property": "Despesa2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2de748d5ef71b48da914",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Despesas"
-              }
-            },
-            "Property": "Diff_MesAnterior"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

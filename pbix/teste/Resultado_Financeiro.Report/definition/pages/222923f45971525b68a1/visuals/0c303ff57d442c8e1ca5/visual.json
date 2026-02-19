@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "6b5f55273c77c1342777",
+  "name": "0c303ff57d442c8e1ca5",
   "position": {
-    "x": 16.886543535620053,
-    "y": 10.131926121372031,
-    "z": 5000,
-    "height": 55.1627088830255,
-    "width": 1033.4564643799472,
-    "tabOrder": 6000
+    "x": 18.46153846153846,
+    "y": 18.46153846153846,
+    "z": 4000,
+    "height": 69.230769230769226,
+    "width": 915,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "VISÃO GERAL - RH",
+                    "value": "FLUXO DE CAIXA",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Calibri",

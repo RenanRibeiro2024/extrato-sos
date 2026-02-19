@@ -11,7 +11,7 @@ table F_Movimentacoes
 
 	column Data
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: c13da3ee-522f-4e2f-8ea1-c1269c5649f9
 		summarizeBy: none
 		sourceColumn: Data

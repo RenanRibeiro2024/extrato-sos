@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "9ff1b9bf5e31cb498cf2",
+  "name": "4b11f97fbf606ddc130a",
   "position": {
-    "x": 150.44776119402985,
-    "y": 648.35820895522386,
-    "z": 8000,
-    "height": 47.761194029850742,
-    "width": 63.28358208955224,
-    "tabOrder": 9000
+    "x": 213.52466367713004,
+    "y": 205.48878923766816,
+    "z": 5002,
+    "height": 58.54708520179372,
+    "width": 210.08071748878925,
+    "tabOrder": 5002
   },
   "visual": {
     "visualType": "kpi",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Medidas_Func"
+                      "Entity": "Medidas_FC"
                     }
                   },
-                  "Property": "Contagem_Mulheres"
+                  "Property": "FC Investimentos"
                 }
               },
-              "queryRef": "Medidas_Func.Contagem_Mulheres",
-              "nativeQueryRef": "Contagem_Mulheres"
+              "queryRef": "Medidas_FC.FC Investimentos",
+              "nativeQueryRef": "FC Investimentos"
             }
           ]
         },
@@ -105,17 +105,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#ED0093'"
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -128,7 +117,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -164,20 +153,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Funcionários Ativos'"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -203,24 +178,11 @@
                   "Value": "'center'"
                 }
               }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
             },
-            "bottom": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "'Investimento'"
                 }
               }
             }
@@ -233,7 +195,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -241,6 +203,26 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

@@ -19,7 +19,7 @@ table Medidas_Func
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Salario Mensal (Dias Uteis)2' = ```
+	measure 'Salario Mensal (Dias Uteis)2' =
 			
 			VAR DiasUteis =
 			    CALCULATE (
@@ -30,9 +30,7 @@ table Medidas_Func
 			        )
 			    )
 			RETURN
-			    (SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) + DiasUteis)
-			
-			```
+			    SUM ( F_Movimentacoes[Custo_Diario_Funcionario] ) + DiasUteis
 		lineageTag: d6a503e2-03ad-471f-b7a4-23f43914d31c
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}

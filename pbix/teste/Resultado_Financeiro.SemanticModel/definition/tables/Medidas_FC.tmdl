@@ -7,12 +7,12 @@ table Medidas_FC
 			
 			RETURN 
 			    CALCULATE(
-			        IF(cod = "SALDO INICIAL" && NOT(ISINSCOPE(D_Categorias[Categoria_FC])),[saldo Inicial], 
+			        IF(cod = "SALDO INICIAL" && NOT(ISINSCOPE(D_Categorias[Tipo_Operacao])),[saldo Inicial], 
 			        IF(cod = "OPERACIONAL", [FC Operacional],
 			        IF(cod = "INVESTIMENTO",[FC Investimentos],
 			        IF(cod = "FINANCIAMENTO", [FC Financiamentos],
-			        IF(cod = "SALDO FINAL"  && NOT(ISINSCOPE(D_Categorias[Categoria_FC])),CALCULATE([FC Saldo Final], ALL('D_PlanoDeContas_FC')),
-			        IF(cod = "SALDO ACUMULADO"  && NOT(ISINSCOPE(D_Categorias[Categoria_FC])), [V Acumulado],BLANK())))))))
+			        IF(cod = "SALDO FINAL"  && NOT(ISINSCOPE(D_Categorias[Tipo_Operacao])),CALCULATE([FC Saldo Final], ALL('D_PlanoDeContas_FC')),
+			        IF(cod = "SALDO ACUMULADO"  && NOT(ISINSCOPE(D_Categorias[Tipo_Operacao])), [V Acumulado],BLANK())))))))
 			```
 		lineageTag: 7b2cc74b-1a47-4029-b151-5822d4d6419b
 
@@ -21,8 +21,9 @@ table Medidas_FC
 	measure 'saldo Inicial' = ```
 			
 			var saldo = CALCULATE([V Acumulado],all(D_PlanoDeContas_FC), PREVIOUSMONTH(D_Calendario[Date]))
+			//var saldo2 = IF(saldo = BLANK() && NOT(ISINSCOPE(F_Movimentacoes[Tipo_Operacao])), 0, saldo)
 			RETURN 
-			    IF(saldo = BLANK() && NOT(ISINSCOPE(D_Categorias[Tipo_Operacao])), 0, saldo)
+			    saldo
 			```
 		lineageTag: 26fcf171-61ec-4b90-b2d1-4ea1c8a14230
 
@@ -108,6 +109,36 @@ table Medidas_FC
 		lineageTag: a4123fd1-ea9e-4956-88e2-f119005b05d7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Caixa =
+			
+			[Receita] - [Despesas_FC]
+		lineageTag: db02a8fc-31af-4149-9853-205dffad0772
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CorFundo_FC = ```
+			
+			VAR vCor = MAX(D_PlanoDeContas_FC[Cor])
+			VAR Receita = "#B0E0E6"
+			VAR vDefault = "DEFAULT"
+			VAR vCorFundoReceita = "#D8BFD8"
+			VAR vResultado = "#000000"
+			return
+			//1 = RESULTADOS
+			//2 = RECEITA
+			//3 = FATURAMENTO
+			
+			SWITCH(
+			    TRUE(),
+			    vCor = "1",Receita,
+			    vCor = "2",vCorFundoReceita,
+			    vCor = "3",vResultado,
+			    vDefault
+			    )
+			
+			```
+		lineageTag: 27a89866-cea9-43fb-8a9e-9739ad382dab
 
 	column Column
 		formatString: 0
