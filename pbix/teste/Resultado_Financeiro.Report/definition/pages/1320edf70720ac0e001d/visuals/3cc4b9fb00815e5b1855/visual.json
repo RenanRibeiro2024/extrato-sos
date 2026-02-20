@@ -75,7 +75,8 @@
                 }
               },
               "queryRef": "Medidas_DRE.Resultado_Financeiro",
-              "nativeQueryRef": "Resultado"
+              "nativeQueryRef": "Resultado Financeiro",
+              "displayName": "Resultado Financeiro"
             }
           ]
         }

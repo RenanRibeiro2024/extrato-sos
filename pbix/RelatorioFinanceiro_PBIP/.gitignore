@@ -1,6 +1,0 @@
-*.pbix
-*.pbip
-*.pbit
-__pycache__/
-.DS_Store
-*.tmp

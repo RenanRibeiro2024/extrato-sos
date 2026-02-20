@@ -4,7 +4,7 @@
   "position": {
     "x": 214.74643277915956,
     "y": 72.386438015447041,
-    "z": 0,
+    "z": 1000,
     "height": 343.83558057337348,
     "width": 1049.6033512239821,
     "tabOrder": 0
@@ -62,7 +62,7 @@
               },
               "queryRef": "D_Categorias.Tipo_Operacao",
               "nativeQueryRef": "Tipo_Operacao",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -96,6 +96,7 @@
             "queryRefs": [
               "D_PlanoDeContas_FC.FC"
             ],
+            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {

@@ -4,7 +4,7 @@
   "position": {
     "x": 18.09660950386176,
     "y": 235.25592355020288,
-    "z": 2000,
+    "z": 3000,
     "height": 180.9660950386176,
     "width": 180.9660950386176,
     "tabOrder": 2000
@@ -53,108 +53,6 @@
                 "Literal": {
                   "Value": "false"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "l",
-                    "Entity": "LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "l"
-                                }
-                              },
-                              "Property": "Mês"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'outubro'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "HierarchyLevel": {
-                              "Expression": {
-                                "Hierarchy": {
-                                  "Expression": {
-                                    "PropertyVariationSource": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "D_Calendario"
-                                        }
-                                      },
-                                      "Name": "Variation",
-                                      "Property": "Date"
-                                    }
-                                  },
-                                  "Hierarchy": "Hierarquia de datas"
-                                }
-                              },
-                              "Level": "Mês"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'outubro'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "LocalDateTable_112c76e9-d326-40b4-82f7-cfd3de953ce9"
-                                    }
-                                  },
-                                  "Property": "Mês"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "outubro"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }

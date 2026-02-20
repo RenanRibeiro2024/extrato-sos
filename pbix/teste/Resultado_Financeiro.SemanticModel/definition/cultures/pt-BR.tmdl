@@ -621,6 +621,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Data": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -3571,9 +3581,830 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_FC.cor_fundo_FC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_FC",
+			          "ConceptualProperty": "CorFundo_FC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cor fundo FC": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CorFundo_FC": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "D_calendario_date_mê_has_D_calendario_date_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.mê": {
+			          "Target": {
+			            "Entity": "D_calendario.date.mê"
+			          }
+			        },
+			        "D_calendario.date.dia": {
+			          "Target": {
+			            "Entity": "D_calendario.date.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.mê"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_dias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.dia"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_have_mê"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "D_calendario.date.dia"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "D_calendario.date.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_are_in_mê"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_trimestre_has_D_calendario_date_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "D_calendario.date.trimestre"
+			          }
+			        },
+			        "D_calendario.date.mê": {
+			          "Target": {
+			            "Entity": "D_calendario.date.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_mê"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.mê"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_trimestres"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "D_calendario.date.mê"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "D_calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_are_in_trimestres"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_ano_has_D_calendario_date_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.ano": {
+			          "Target": {
+			            "Entity": "D_calendario.date.ano"
+			          }
+			        },
+			        "D_calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "D_calendario.date.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.ano"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "anos_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_anos"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "D_calendario.date.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "D_calendario.date.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_anos"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "D_calendario.date.hierarquia_de_data"
+			          }
+			        },
+			        "D_calendario.date.dia": {
+			          "Target": {
+			            "Entity": "D_calendario.date.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "D_calendario.date.hierarquia_de_data"
+			          }
+			        },
+			        "D_calendario.date.mê": {
+			          "Target": {
+			            "Entity": "D_calendario.date.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "D_calendario.date.hierarquia_de_data"
+			          }
+			        },
+			        "D_calendario.date.trimestre": {
+			          "Target": {
+			            "Entity": "D_calendario.date.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "D_calendario.date.hierarquia_de_data"
+			          }
+			        },
+			        "D_calendario.date.ano": {
+			          "Target": {
+			            "Entity": "D_calendario.date.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos"
+			        }
+			      ]
+			    },
+			    "D_calendario_date_has_hierarquia_de_data": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_calendario.date": {
+			          "Target": {
+			            "Entity": "D_calendario.date"
+			          }
+			        },
+			        "D_calendario.date.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "D_calendario.date.hierarquia_de_data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario.date"
+			            },
+			            "Object": {
+			              "Role": "D_calendario.date.hierarquia_de_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_hierarquia_de_data"
+			        }
+			      ]
+			    },
+			    "D_categoria_has_D_plano_de_contas_FC": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Categorias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_categoria": {
+			          "Target": {
+			            "Entity": "D_categoria"
+			          }
+			        },
+			        "D_plano_de_contas_FC": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC"
+			          },
+			          "Nouns": [
+			            {
+			              "categoria FC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_categoria"
+			            },
+			            "Object": {
+			              "Role": "D_plano_de_contas_FC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_categorias_have_D_plano_de_contas_FC"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_plano_de_contas_FC"
+			            },
+			            "Object": {
+			              "Role": "D_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_plano_de_contas_FC_have_D_categorias"
+			        }
+			      ]
+			    },
+			    "D_categoria_has_D_plano_de_conta": {
+			      "Binding": {
+			        "ConceptualEntity": "D_Categorias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_categoria": {
+			          "Target": {
+			            "Entity": "D_categoria"
+			          }
+			        },
+			        "D_plano_de_conta": {
+			          "Target": {
+			            "Entity": "D_plano_de_conta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_categoria"
+			            },
+			            "Object": {
+			              "Role": "D_plano_de_conta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_categorias_have_D_plano_de_contas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_plano_de_conta"
+			            },
+			            "Object": {
+			              "Role": "D_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_plano_de_contas_have_D_categorias"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_D_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "D_calendario": {
+			          "Target": {
+			            "Entity": "D_calendario"
+			          },
+			          "Nouns": [
+			            {
+			              "data": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "D_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_D_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_calendario"
+			            },
+			            "Object": {
+			              "Role": "F_movimentacoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_calendarios_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_D_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "D_cliente": {
+			          "Target": {
+			            "Entity": "D_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "D_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_D_clientes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_cliente"
+			            },
+			            "Object": {
+			              "Role": "F_movimentacoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_clientes_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_D_fornecedor": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "D_fornecedor": {
+			          "Target": {
+			            "Entity": "D_fornecedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "D_fornecedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_D_fornecedors"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_fornecedor"
+			            },
+			            "Object": {
+			              "Role": "F_movimentacoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_fornecedors_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_D_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "D_categoria": {
+			          "Target": {
+			            "Entity": "D_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "D_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_D_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_categoria"
+			            },
+			            "Object": {
+			              "Role": "F_movimentacoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_categorias_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "F_movimentacoe_has_D_funcionario": {
+			      "Binding": {
+			        "ConceptualEntity": "F_Movimentacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_movimentacoe": {
+			          "Target": {
+			            "Entity": "F_movimentacoe"
+			          }
+			        },
+			        "D_funcionario": {
+			          "Target": {
+			            "Entity": "D_funcionario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_movimentacoe"
+			            },
+			            "Object": {
+			              "Role": "D_funcionario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_movimentacoes_have_D_funcionarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_funcionario"
+			            },
+			            "Object": {
+			              "Role": "F_movimentacoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_funcionarios_have_F_movimentacoes"
+			        }
+			      ]
+			    },
+			    "D_plano_de_contas_FC_has_medidas_FC_cor_fundo_FC": {
+			      "Binding": {
+			        "ConceptualEntity": "D_PlanoDeContas_FC"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_plano_de_contas_FC": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC"
+			          }
+			        },
+			        "medidas_FC.cor_fundo_FC": {
+			          "Target": {
+			            "Entity": "medidas_FC.cor_fundo_FC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_plano_de_contas_FC"
+			            },
+			            "Object": {
+			              "Role": "medidas_FC.cor_fundo_FC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_plano_de_contas_FC_have_cor_fundo_FC"
+			        }
+			      ]
+			    },
+			    "D_plano_de_contas_FC_has_cor": {
+			      "Binding": {
+			        "ConceptualEntity": "D_PlanoDeContas_FC"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_plano_de_contas_FC": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC"
+			          }
+			        },
+			        "D_plano_de_contas_FC.cor": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC.cor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_plano_de_contas_FC"
+			            },
+			            "Object": {
+			              "Role": "D_plano_de_contas_FC.cor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_plano_de_contas_FC_have_cors"
+			        }
+			      ]
+			    },
+			    "D_plano_de_contas_FC_has_indice": {
+			      "Binding": {
+			        "ConceptualEntity": "D_PlanoDeContas_FC"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_plano_de_contas_FC": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC"
+			          }
+			        },
+			        "D_plano_de_contas_FC.indice": {
+			          "Target": {
+			            "Entity": "D_plano_de_contas_FC.indice"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_plano_de_contas_FC"
+			            },
+			            "Object": {
+			              "Role": "D_plano_de_contas_FC.indice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_plano_de_contas_FC_have_indices"
+			        }
+			      ]
+			    },
 			    "D_plano_de_contas_FC_has_fc": {
 			      "Binding": {
 			        "ConceptualEntity": "D_PlanoDeContas_FC"
@@ -6838,771 +7669,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "F_movimentacoes_have_nome_origems"
-			        }
-			      ]
-			    },
-			    "D_plano_de_contas_FC_has_indice": {
-			      "Binding": {
-			        "ConceptualEntity": "D_PlanoDeContas_FC"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_plano_de_contas_FC": {
-			          "Target": {
-			            "Entity": "D_plano_de_contas_FC"
-			          }
-			        },
-			        "D_plano_de_contas_FC.indice": {
-			          "Target": {
-			            "Entity": "D_plano_de_contas_FC.indice"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_plano_de_contas_FC"
-			            },
-			            "Object": {
-			              "Role": "D_plano_de_contas_FC.indice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_plano_de_contas_FC_have_indices"
-			        }
-			      ]
-			    },
-			    "D_plano_de_contas_FC_has_cor": {
-			      "Binding": {
-			        "ConceptualEntity": "D_PlanoDeContas_FC"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_plano_de_contas_FC": {
-			          "Target": {
-			            "Entity": "D_plano_de_contas_FC"
-			          }
-			        },
-			        "D_plano_de_contas_FC.cor": {
-			          "Target": {
-			            "Entity": "D_plano_de_contas_FC.cor"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_plano_de_contas_FC"
-			            },
-			            "Object": {
-			              "Role": "D_plano_de_contas_FC.cor"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_plano_de_contas_FC_have_cors"
-			        }
-			      ]
-			    },
-			    "F_movimentacoe_has_D_funcionario": {
-			      "Binding": {
-			        "ConceptualEntity": "F_Movimentacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "F_movimentacoe": {
-			          "Target": {
-			            "Entity": "F_movimentacoe"
-			          }
-			        },
-			        "D_funcionario": {
-			          "Target": {
-			            "Entity": "D_funcionario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "F_movimentacoe"
-			            },
-			            "Object": {
-			              "Role": "D_funcionario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "F_movimentacoes_have_D_funcionarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_funcionario"
-			            },
-			            "Object": {
-			              "Role": "F_movimentacoe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_funcionarios_have_F_movimentacoes"
-			        }
-			      ]
-			    },
-			    "F_movimentacoe_has_D_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "F_Movimentacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "F_movimentacoe": {
-			          "Target": {
-			            "Entity": "F_movimentacoe"
-			          }
-			        },
-			        "D_categoria": {
-			          "Target": {
-			            "Entity": "D_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "F_movimentacoe"
-			            },
-			            "Object": {
-			              "Role": "D_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "F_movimentacoes_have_D_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_categoria"
-			            },
-			            "Object": {
-			              "Role": "F_movimentacoe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_categorias_have_F_movimentacoes"
-			        }
-			      ]
-			    },
-			    "F_movimentacoe_has_D_fornecedor": {
-			      "Binding": {
-			        "ConceptualEntity": "F_Movimentacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "F_movimentacoe": {
-			          "Target": {
-			            "Entity": "F_movimentacoe"
-			          }
-			        },
-			        "D_fornecedor": {
-			          "Target": {
-			            "Entity": "D_fornecedor"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "F_movimentacoe"
-			            },
-			            "Object": {
-			              "Role": "D_fornecedor"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "F_movimentacoes_have_D_fornecedors"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_fornecedor"
-			            },
-			            "Object": {
-			              "Role": "F_movimentacoe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_fornecedors_have_F_movimentacoes"
-			        }
-			      ]
-			    },
-			    "F_movimentacoe_has_D_cliente": {
-			      "Binding": {
-			        "ConceptualEntity": "F_Movimentacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "F_movimentacoe": {
-			          "Target": {
-			            "Entity": "F_movimentacoe"
-			          }
-			        },
-			        "D_cliente": {
-			          "Target": {
-			            "Entity": "D_cliente"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "F_movimentacoe"
-			            },
-			            "Object": {
-			              "Role": "D_cliente"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "F_movimentacoes_have_D_clientes"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_cliente"
-			            },
-			            "Object": {
-			              "Role": "F_movimentacoe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_clientes_have_F_movimentacoes"
-			        }
-			      ]
-			    },
-			    "F_movimentacoe_has_D_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "F_Movimentacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "F_movimentacoe": {
-			          "Target": {
-			            "Entity": "F_movimentacoe"
-			          }
-			        },
-			        "D_calendario": {
-			          "Target": {
-			            "Entity": "D_calendario"
-			          },
-			          "Nouns": [
-			            {
-			              "data": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "F_movimentacoe"
-			            },
-			            "Object": {
-			              "Role": "D_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "F_movimentacoes_have_D_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario"
-			            },
-			            "Object": {
-			              "Role": "F_movimentacoe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_calendarios_have_F_movimentacoes"
-			        }
-			      ]
-			    },
-			    "D_categoria_has_D_plano_de_conta": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Categorias"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_categoria": {
-			          "Target": {
-			            "Entity": "D_categoria"
-			          }
-			        },
-			        "D_plano_de_conta": {
-			          "Target": {
-			            "Entity": "D_plano_de_conta"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_categoria"
-			            },
-			            "Object": {
-			              "Role": "D_plano_de_conta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_categorias_have_D_plano_de_contas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_plano_de_conta"
-			            },
-			            "Object": {
-			              "Role": "D_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_plano_de_contas_have_D_categorias"
-			        }
-			      ]
-			    },
-			    "D_categoria_has_D_plano_de_contas_FC": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Categorias"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_categoria": {
-			          "Target": {
-			            "Entity": "D_categoria"
-			          }
-			        },
-			        "D_plano_de_contas_FC": {
-			          "Target": {
-			            "Entity": "D_plano_de_contas_FC"
-			          },
-			          "Nouns": [
-			            {
-			              "categoria FC": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_categoria"
-			            },
-			            "Object": {
-			              "Role": "D_plano_de_contas_FC"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_categorias_have_D_plano_de_contas_FC"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_plano_de_contas_FC"
-			            },
-			            "Object": {
-			              "Role": "D_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "D_plano_de_contas_FC_have_D_categorias"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_has_hierarquia_de_data": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date": {
-			          "Target": {
-			            "Entity": "D_calendario.date"
-			          }
-			        },
-			        "D_calendario.date.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "D_calendario.date.hierarquia_de_data"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.hierarquia_de_data"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dates_have_hierarquia_de_data"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_ano": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "D_calendario.date.hierarquia_de_data"
-			          }
-			        },
-			        "D_calendario.date.ano": {
-			          "Target": {
-			            "Entity": "D_calendario.date.ano"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_anos"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "D_calendario.date.hierarquia_de_data"
-			          }
-			        },
-			        "D_calendario.date.trimestre": {
-			          "Target": {
-			            "Entity": "D_calendario.date.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_trimestres"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_mê": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "D_calendario.date.hierarquia_de_data"
-			          }
-			        },
-			        "D_calendario.date.mê": {
-			          "Target": {
-			            "Entity": "D_calendario.date.mê"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_mê"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_hierarquia_de_data_has_D_calendario_date_dia": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "D_calendario.date.hierarquia_de_data"
-			          }
-			        },
-			        "D_calendario.date.dia": {
-			          "Target": {
-			            "Entity": "D_calendario.date.dia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.dia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_dias"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_ano_has_D_calendario_date_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.ano": {
-			          "Target": {
-			            "Entity": "D_calendario.date.ano"
-			          }
-			        },
-			        "D_calendario.date.trimestre": {
-			          "Target": {
-			            "Entity": "D_calendario.date.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.ano"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "anos_have_trimestres"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.trimestre"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_have_anos"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "D_calendario.date.trimestre"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "D_calendario.date.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_are_in_anos"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_trimestre_has_D_calendario_date_mê": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.trimestre": {
-			          "Target": {
-			            "Entity": "D_calendario.date.trimestre"
-			          }
-			        },
-			        "D_calendario.date.mê": {
-			          "Target": {
-			            "Entity": "D_calendario.date.mê"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.trimestre"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.mê"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "D_calendario.date.mê"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "D_calendario.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mê_are_in_trimestres"
-			        }
-			      ]
-			    },
-			    "D_calendario_date_mê_has_D_calendario_date_dia": {
-			      "Binding": {
-			        "ConceptualEntity": "D_Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "D_calendario.date.mê": {
-			          "Target": {
-			            "Entity": "D_calendario.date.mê"
-			          }
-			        },
-			        "D_calendario.date.dia": {
-			          "Target": {
-			            "Entity": "D_calendario.date.dia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.mê"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.dia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mê_have_dias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "D_calendario.date.dia"
-			            },
-			            "Object": {
-			              "Role": "D_calendario.date.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dias_have_mê"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "D_calendario.date.dia"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "D_calendario.date.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dias_are_in_mê"
 			        }
 			      ]
 			    }

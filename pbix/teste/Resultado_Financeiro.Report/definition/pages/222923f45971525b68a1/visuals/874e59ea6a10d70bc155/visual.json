@@ -4,7 +4,7 @@
   "position": {
     "x": 18.09660950386176,
     "y": 429.49286555831912,
-    "z": 3000,
+    "z": 4000,
     "height": 273.862023825108,
     "width": 1246.25317449928,
     "tabOrder": 3000
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "D_Calendario.Date",
-              "nativeQueryRef": "Date",
-              "active": true
+              "nativeQueryRef": "Data",
+              "active": true,
+              "displayName": "Data"
             }
           ]
         },
