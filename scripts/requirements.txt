@@ -1,0 +1,5 @@
+streamlit
+time
+os
+win32com.client
+pythoncom
