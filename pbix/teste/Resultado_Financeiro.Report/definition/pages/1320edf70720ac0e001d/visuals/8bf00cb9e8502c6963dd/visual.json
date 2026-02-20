@@ -306,6 +306,19 @@
             ],
             "metadata": "Medidas.% DRE"
           }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 2
+                }
+              }
+            ],
+            "metadata": "Medidas.Valor_DRE"
+          }
         }
       ],
       "general": [

@@ -39,7 +39,7 @@ table D_PlanoDeContas_FC
 				        {"INVESTIMENTO", 2, 0},
 				        {"FINANCIAMENTO", 3, 0},
 				        {"SALDO FINAL", 4, 0},
-				        {"SALDO ACUMULADO", 5, 1}
+				        {"SALDO ACUMULADO", 5, 0}
 				    }
 				)
 

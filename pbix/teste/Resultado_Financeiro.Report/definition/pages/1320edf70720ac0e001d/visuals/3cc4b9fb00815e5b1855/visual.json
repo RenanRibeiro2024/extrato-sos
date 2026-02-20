@@ -182,7 +182,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 2,
-                      "Percent": 0.6
+                      "Percent": 0
                     }
                   }
                 }
@@ -201,7 +201,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 9,
-                      "Percent": 0.4
+                      "Percent": 0
                     }
                   }
                 }
@@ -226,7 +226,7 @@
             "areaShow": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -241,6 +241,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'linear'"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
