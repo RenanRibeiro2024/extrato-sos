@@ -45,7 +45,7 @@ Essa automação **pode ser utilizada para:**
 # 📊 Dashboard de Resultado Financeiro
 
 ## 📌 Visão Geral
-Este projeto consiste em um **Dashboard que apresenta o Resultado Financeiro** de uma empresa fictícia, com dadods fictícios gerados por IA. Desenvolvido com o objetivo de **analisar a saúde financeira do negócio**, permitindo o acompanhamento detalhado informações como **DRE, Fluxo de Caixa, análises financeiras e KPIs**.
+Este projeto consiste em um **Dashboard que apresenta o Resultado Financeiro** de uma empresa fictícia, com dados fictícios gerados por IA. Desenvolvido com o objetivo de **analisar a saúde financeira do negócio**, permitindo o acompanhamento detalhado informações como **DRE, Fluxo de Caixa, análises financeiras e KPIs**.
 
 O dashboard foi pensado para oferecer uma **visão clara, dinâmica e interativa**, auxiliando gestores na tomada de decisão baseada em dados.
 
@@ -79,8 +79,8 @@ Este dashboard resolve esse problema ao centralizar todas as informações finan
 - **Power BI** Para visualização de dados
 - **DAX** para criação de medidas e cálculos financeiros
 - **Power Query** para a Modelagem e tratamento de dados, com tabelas fato e dimensões
-- **Python** para automatização da atualização de dados
-- **Excel** para consolidação e armazenamento e manupulação de dados
+- **Python** para automação da atualização de dados
+- **Excel** para consolidação, armazenamento e manipulação de dados
 
 ---
 
@@ -98,3 +98,4 @@ Este projeto foi desenvolvido com foco em **portfólio**, demonstrando habilidad
 - Construção de dashboards analíticos
 - Storytelling com dados
 - Aplicação de regras de negócio no BI
+- Automação de processos, RPA
